@@ -15,6 +15,11 @@ import {
 } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 import { SafeImage } from './SafeImage';
+import {
+  EXECUTIVE_EASE,
+  RevealBlock,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 const FILTERS: { id: ProjectCategory; label: string }[] = [
   { id: 'all', label: 'All Projects' },
@@ -47,7 +52,7 @@ export function ProjectsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Heading + Category Filter */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <RevealBlock className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-2.5">
             <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
               Portfolio Showcase
@@ -94,15 +99,15 @@ export function ProjectsSection() {
               );
             })}
           </div>
-        </div>
+        </RevealBlock>
 
         {/* Featured Showcase Card — AgroMitra */}
         {showFeatured && (
           <motion.article
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            viewport={VIEWPORT_CONFIG}
+            transition={{ duration: 0.55, delay: 0.05, ease: EXECUTIVE_EASE }}
             className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden shadow-sm hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 transition-colors"
           >
             <div className="grid lg:grid-cols-12 items-stretch">
@@ -248,13 +253,13 @@ export function ProjectsSection() {
             {filteredSecondary.map((project, idx) => (
               <motion.article
                 key={project.id}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={VIEWPORT_CONFIG}
                 transition={{
-                  duration: 0.4,
-                  delay: idx * 0.05,
-                  ease: [0.16, 1, 0.3, 1],
+                  duration: 0.5,
+                  delay: idx * 0.08,
+                  ease: EXECUTIVE_EASE,
                 }}
                 className="group rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden flex flex-col justify-between hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200 shadow-sm"
               >

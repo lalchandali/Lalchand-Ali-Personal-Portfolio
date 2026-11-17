@@ -114,8 +114,14 @@ export const PROFILE = {
   ],
 };
 
+export function resolveAssetPath(assetPath: string): string {
+  const cleanPath = assetPath.replace(/^\/+/, '');
+  const base = import.meta.env.BASE_URL || '/';
+  return base.endsWith('/') ? `${base}${cleanPath}` : `${base}/${cleanPath}`;
+}
+
 export const HERO_IMAGE = {
-  src: '/assets/aistudio/my_photo_1_a247e1c4.png',
+  src: resolveAssetPath('assets/aistudio/my_photo_1_a247e1c4.png'),
   alt: 'Professional portrait of Md Lal Chand Ali, Software Engineer',
 };
 
@@ -365,7 +371,9 @@ export const PROJECTS: ProjectItem[] = [
       'Axios',
       'REST APIs',
     ],
-    image: '/src/assets/images/project_agromitra_platform_1794910152138.jpg',
+    image: resolveAssetPath(
+      'src/assets/images/project_agromitra_platform_1794910152138.jpg'
+    ),
     imageAlt:
       'AgroMitra Smart Agricultural Management Platform interface displaying soil macronutrient analysis and crop planning modules',
     repoUrl: 'https://github.com/lalchandali',
@@ -417,7 +425,9 @@ async def evaluate_crop_plan(
       'Connected troubleshooting findings to infrastructure support',
     ],
     stack: ['Python', 'Prompt Engineering', 'LLM Tools', 'REST APIs', 'ITSM'],
-    image: '/src/assets/images/project_python_ai_automation_1794910154157.jpg',
+    image: resolveAssetPath(
+      'src/assets/images/project_python_ai_automation_1794910154157.jpg'
+    ),
     imageAlt:
       'Python automation and AI workflow terminal visualization in an engineering workspace',
     repoUrl: 'https://github.com/lalchandali',
@@ -455,7 +465,9 @@ async def evaluate_crop_plan(
       'Added boundary checking and clean console UX',
     ],
     stack: ['Java', 'OOP', 'File I/O', 'Collections'],
-    image: '/src/assets/images/project_java_game_oop_1794910154146.jpg',
+    image: resolveAssetPath(
+      'src/assets/images/project_java_game_oop_1794910154146.jpg'
+    ),
     imageAlt:
       'Java OOP application showing difficulty modes and leaderboard persistence output',
     repoUrl: 'https://github.com/lalchandali',
@@ -576,7 +588,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
   },
   {
     id: 'cert-cs-l3',
-    title: 'Customer Service – Level 3',
+    title: 'Professional Customer Services, Level 3',
     issuer: 'National Skills Development Authority (NSDA)',
     credentialMeta: 'NSDA Level 3',
     category: 'Client & Operations',

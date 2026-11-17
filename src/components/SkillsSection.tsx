@@ -9,6 +9,11 @@ import {
   Server,
 } from 'lucide-react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
+import {
+  EXECUTIVE_EASE,
+  RevealBlock,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 const CATEGORY_ICONS: Record<string, typeof Code2> = {
   languages: Code2,
@@ -34,7 +39,7 @@ export function SkillsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Heading + Filter Tabs */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <RevealBlock className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-2.5">
             <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
               Technical Capabilities
@@ -106,7 +111,7 @@ export function SkillsSection() {
               );
             })}
           </div>
-        </div>
+        </RevealBlock>
 
         {/* Bento Skill Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -115,13 +120,13 @@ export function SkillsSection() {
             return (
               <motion.div
                 key={group.id}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={VIEWPORT_CONFIG}
                 transition={{
-                  duration: 0.35,
-                  delay: idx * 0.04,
-                  ease: [0.16, 1, 0.3, 1],
+                  duration: 0.48,
+                  delay: idx * 0.06,
+                  ease: EXECUTIVE_EASE,
                 }}
                 className="group relative rounded-2xl p-[1px] bg-slate-200 dark:bg-[#263247] hover:bg-gradient-to-br hover:from-[#7657F6]/70 hover:to-[#00C2D9]/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#7657F6]/10"
               >

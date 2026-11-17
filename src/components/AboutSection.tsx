@@ -7,6 +7,12 @@ import {
   Server,
 } from 'lucide-react';
 import { ABOUT_HIGHLIGHTS, PROFILE } from '../data/portfolioData';
+import {
+  EXECUTIVE_EASE,
+  staggerGridVariants,
+  staggerItemVariants,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 const HIGHLIGHT_ICONS = [Briefcase, Code2, Server, Bot, Compass];
 
@@ -20,10 +26,10 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Executive Summary Narrative */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            viewport={VIEWPORT_CONFIG}
+            transition={{ duration: 0.55, ease: EXECUTIVE_EASE }}
             className="lg:col-span-5 space-y-5"
           >
             <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
@@ -41,20 +47,19 @@ export function AboutSection() {
           </motion.div>
 
           {/* 5-Highlight Bento Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-6 gap-4">
+          <motion.div
+            variants={staggerGridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT_CONFIG}
+            className="lg:col-span-7 grid grid-cols-1 md:grid-cols-6 gap-4"
+          >
             {ABOUT_HIGHLIGHTS.map((item, idx) => {
               const Icon = HIGHLIGHT_ICONS[idx % HIGHLIGHT_ICONS.length];
               return (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: idx * 0.05,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
+                  variants={staggerItemVariants}
                   className={`${item.span} group rounded-2xl border border-slate-200 dark:border-[#263247] bg-slate-50/80 dark:bg-[#141F30] p-5 sm:p-6 hover:border-[#7657F6]/50 dark:hover:border-[#00C2D9]/50 transition-all duration-200 hover:-translate-y-0.5`}
                 >
                   <div className="flex items-start justify-between gap-3 mb-3">
@@ -76,7 +81,7 @@ export function AboutSection() {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

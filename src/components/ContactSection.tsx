@@ -15,6 +15,7 @@ import {
   Send,
 } from 'lucide-react';
 import { PROFILE } from '../data/portfolioData';
+import { EXECUTIVE_EASE, VIEWPORT_CONFIG } from './MotionReveal';
 
 type SubmitState =
   | { status: 'idle' }
@@ -100,7 +101,21 @@ export function ContactSection() {
         }),
       });
 
-      const data = (await response.json().catch(() => ({}))) as {
+      const contentType = response.headers.get('content-type') || '';
+      const isJson = contentType.includes('application/json');
+
+      if (!isJson && (response.status === 404 || response.status === 405)) {
+        setSubmitState({
+          status: 'error',
+          code: 'STATIC_HOST',
+          fallbackEmail: PROFILE.email,
+          message:
+            'This site is running in static hosting mode (such as GitHub Pages), where no server mail relay is active. Click below to send your message directly using your email app.',
+        });
+        return;
+      }
+
+      const data = (isJson ? await response.json().catch(() => ({})) : {}) as {
         ok?: boolean;
         message?: string;
         error?: string;
@@ -160,10 +175,10 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            viewport={VIEWPORT_CONFIG}
+            transition={{ duration: 0.55, ease: EXECUTIVE_EASE }}
             className="lg:col-span-5 space-y-6"
           >
             <div className="space-y-3">
@@ -328,13 +343,13 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={VIEWPORT_CONFIG}
             transition={{
-              duration: 0.45,
+              duration: 0.55,
               delay: 0.08,
-              ease: [0.16, 1, 0.3, 1],
+              ease: EXECUTIVE_EASE,
             }}
             className="lg:col-span-7 rounded-2xl border border-slate-200 dark:border-[#263247] bg-slate-50/70 dark:bg-[#141F30] p-6 sm:p-8 shadow-sm"
           >

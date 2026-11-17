@@ -8,6 +8,13 @@ import {
   MapPin,
 } from 'lucide-react';
 import { EXPERIENCE } from '../data/portfolioData';
+import {
+  EXECUTIVE_EASE,
+  RevealBlock,
+  staggerGridVariants,
+  staggerItemVariants,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 export function ExperienceSection() {
   const primaryRole = EXPERIENCE.find((e) => !e.isConcurrent);
@@ -20,7 +27,7 @@ export function ExperienceSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Heading */}
-        <div className="max-w-2xl space-y-2.5">
+        <RevealBlock className="max-w-2xl space-y-2.5">
           <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
             Professional Journey
           </p>
@@ -32,15 +39,15 @@ export function ExperienceSection() {
             with concurrent IT management, logistics, and customer operations
             responsibilities.
           </p>
-        </div>
+        </RevealBlock>
 
         {/* Primary Career Progression — Softzino Technologies */}
         {primaryRole && (
           <motion.article
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            viewport={VIEWPORT_CONFIG}
+            transition={{ duration: 0.55, delay: 0.05, ease: EXECUTIVE_EASE }}
             className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] p-6 sm:p-8 shadow-sm"
           >
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 pb-6 border-b border-slate-200 dark:border-[#263247]">
@@ -88,13 +95,20 @@ export function ExperienceSection() {
                   <span>Career Progression at {primaryRole.company}</span>
                 </div>
 
-                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <motion.ol
+                  variants={staggerGridVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={VIEWPORT_CONFIG}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
+                >
                   {primaryRole.progressionSteps.map((step, index) => {
                     const isCurrent =
                       index === primaryRole.progressionSteps!.length - 1;
                     return (
-                      <li
+                      <motion.li
                         key={step}
+                        variants={staggerItemVariants}
                         className={`rounded-xl border p-3.5 transition-colors ${
                           isCurrent
                             ? 'border-[#7657F6]/60 bg-[#7657F6]/8 dark:bg-[#7657F6]/15'
@@ -114,10 +128,10 @@ export function ExperienceSection() {
                         <p className="font-display text-sm font-semibold text-[#0F172A] dark:text-[#F8FAFC]">
                           {step}
                         </p>
-                      </li>
+                      </motion.li>
                     );
                   })}
-                </ol>
+                </motion.ol>
               </div>
             )}
 
@@ -139,7 +153,7 @@ export function ExperienceSection() {
         )}
 
         {/* Concurrent Roles Subsection */}
-        <div className="space-y-4">
+        <RevealBlock className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Layers
@@ -160,13 +174,13 @@ export function ExperienceSection() {
             {concurrentRoles.map((exp, idx) => (
               <motion.article
                 key={exp.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={VIEWPORT_CONFIG}
                 transition={{
-                  duration: 0.42,
-                  delay: idx * 0.06,
-                  ease: [0.16, 1, 0.3, 1],
+                  duration: 0.5,
+                  delay: idx * 0.08,
+                  ease: EXECUTIVE_EASE,
                 }}
                 className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] p-6 flex flex-col justify-between gap-5 hover:border-[#7657F6]/50 dark:hover:border-[#00C2D9]/50 transition-colors"
               >
@@ -204,7 +218,7 @@ export function ExperienceSection() {
               </motion.article>
             ))}
           </div>
-        </div>
+        </RevealBlock>
       </div>
     </section>
   );

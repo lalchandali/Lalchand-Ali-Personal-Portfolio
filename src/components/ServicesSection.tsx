@@ -8,6 +8,12 @@ import {
   Server,
 } from 'lucide-react';
 import { SERVICES } from '../data/portfolioData';
+import {
+  RevealBlock,
+  staggerGridVariants,
+  staggerItemVariants,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 const SERVICE_ICONS = [Code2, Server, Bot, ClipboardList, Award];
 
@@ -18,7 +24,7 @@ export function ServicesSection() {
       className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#101827] border-b border-slate-200 dark:border-[#263247] transition-colors duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="max-w-2xl space-y-2.5">
+        <RevealBlock className="max-w-2xl space-y-2.5">
           <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
             What I Deliver
           </p>
@@ -30,22 +36,21 @@ export function ServicesSection() {
             automation, and operational consulting tailored to real business
             demands.
           </p>
-        </div>
+        </RevealBlock>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={staggerGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_CONFIG}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {SERVICES.map((service, idx) => {
             const Icon = SERVICE_ICONS[idx % SERVICE_ICONS.length];
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.4,
-                  delay: idx * 0.05,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
+                variants={staggerItemVariants}
                 className={`rounded-2xl border border-slate-200 dark:border-[#263247] bg-slate-50/70 dark:bg-[#141F30] p-6 flex flex-col justify-between gap-5 hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200 ${
                   idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
@@ -79,7 +84,7 @@ export function ServicesSection() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,11 @@
 import { motion } from 'motion/react';
 import { Award, CheckCircle2, GraduationCap, MapPin } from 'lucide-react';
 import { EDUCATION } from '../data/portfolioData';
+import {
+  EXECUTIVE_EASE,
+  RevealBlock,
+  VIEWPORT_CONFIG,
+} from './MotionReveal';
 
 export function EducationSection() {
   return (
@@ -9,23 +14,23 @@ export function EducationSection() {
       className="py-16 sm:py-20 bg-[#F8FAFC] dark:bg-[#080B14] border-b border-slate-200 dark:border-[#263247] transition-colors duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="max-w-2xl space-y-2.5">
+        <RevealBlock className="max-w-2xl space-y-2.5">
           <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
             Academic Foundation
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC]">
             Education
           </h2>
-        </div>
+        </RevealBlock>
 
         <div className="grid grid-cols-1 gap-6">
           {EDUCATION.map((edu) => (
             <motion.article
               key={edu.id}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              viewport={VIEWPORT_CONFIG}
+              transition={{ duration: 0.55, delay: 0.05, ease: EXECUTIVE_EASE }}
               className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-sm"
             >
               <div className="flex items-start gap-5">
