@@ -5,8 +5,8 @@ Personal portfolio website for **Md Lal Chand Ali** (Software Engineer | IT Serv
 ## Local Development
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Runs the Express + Vite server at `http://localhost:3000`.
