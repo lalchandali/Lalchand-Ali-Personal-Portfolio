@@ -86,9 +86,9 @@ export function HeroSection({
               className="space-y-3"
             >
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.08] text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-                Hi, I&apos;m{' '}
+                Software Engineer Building{' '}
                 <span className="bg-gradient-to-r from-[#6243E8] via-[#7657F6] to-[#00C2D9] dark:from-[#F8FAFC] dark:via-[#C4B5FD] dark:to-[#00C2D9] bg-clip-text text-transparent">
-                  {PROFILE.name}.
+                  Practical Digital Solutions.
                 </span>
               </h1>
 

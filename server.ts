@@ -17,6 +17,7 @@ interface ContactPayload {
   email?: unknown;
   subject?: unknown;
   message?: unknown;
+  website?: unknown;
 }
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,6 +52,16 @@ async function startServer() {
 
   app.post('/api/contact', async (req, res) => {
     const body = (req.body ?? {}) as ContactPayload;
+    const honeypot =
+      typeof body.website === 'string' ? body.website.trim() : '';
+    if (honeypot.length > 0) {
+      res.status(200).json({
+        ok: true,
+        message: 'Thank you. Your message has been received.',
+      });
+      return;
+    }
+
     const name = typeof body.name === 'string' ? body.name.trim() : '';
     const email = typeof body.email === 'string' ? body.email.trim() : '';
     const subject = typeof body.subject === 'string' ? body.subject.trim() : '';

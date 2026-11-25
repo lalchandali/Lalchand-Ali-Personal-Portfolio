@@ -97,13 +97,13 @@ export function CertificationsSection() {
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-              Certifications &amp; Technical Training
+              Certifications &amp; Professional Training
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-              Nationally recognized NSDA competency credentials, Cisco
-              networking training, and specialized online courses, workshops,
-              and webinar participation certificates.
+              National competency credentials (NSDA), Cisco CCNA networking
+              training, and verified courses in Linux, cybersecurity, AI
+              governance, and research fundamentals.
             </p>
           </div>
 

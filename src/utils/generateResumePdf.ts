@@ -226,7 +226,7 @@ export async function downloadResumePdf(): Promise<void> {
     doc.setFontSize(8.4);
     doc.setTextColor(71, 85, 105);
     const rightMeta = exp.isConcurrent
-      ? `${exp.period} | Part-Time Advisory`
+      ? `${exp.period} | Part-Time Role`
       : `${exp.period} | ${exp.location}`;
     doc.text(rightMeta, pageWidth - marginX, y, { align: 'right' });
     y += 4.5;

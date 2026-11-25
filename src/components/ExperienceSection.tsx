@@ -30,15 +30,14 @@ export function ExperienceSection() {
         {/* Section Heading */}
         <RevealBlock className="max-w-2xl space-y-2.5">
           <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
-            Professional Journey
+            Career History
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-            Experience &amp; Concurrent Leadership Roles
+            Professional Experience &amp; Career Progression
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-            Over 7 years of continuous software engineering progression paired
-            with concurrent IT management, logistics, and customer operations
-            responsibilities.
+            Continuous engineering progression at Softzino Technologies alongside
+            separate part-time IT advisory and retail operations roles.
           </p>
         </RevealBlock>
 
@@ -54,7 +53,7 @@ export function ExperienceSection() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 pb-6 border-b border-slate-200 dark:border-[#263247]">
               <div className="space-y-1.5">
                 <div className="flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#6243E8] dark:text-[#A3F7C5]">
-                  <span>Primary Engineering Tenure</span>
+                  <span>Full-Time Engineering Tenure</span>
                   <span aria-hidden="true">·</span>
                   <span>7+ Years</span>
                 </div>
@@ -173,11 +172,11 @@ export function ExperienceSection() {
                 aria-hidden="true"
               />
               <h3 className="font-display text-lg font-semibold text-[#0F172A] dark:text-[#F8FAFC]">
-                Part-Time Group IT &amp; Operations Advisory
+                Part-Time Operations &amp; IT Advisory Roles
               </h3>
             </div>
             <p className="text-xs text-slate-500 dark:text-[#94A3B8]">
-              Shared BARNOi group mandates held part-time alongside primary
+              Separate part-time roles held alongside full-time software
               engineering at Softzino Technologies
             </p>
           </RevealBlock>
@@ -198,7 +197,7 @@ export function ExperienceSection() {
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                     <span className="text-[#0284C7] dark:text-[#00C2D9] font-medium">
-                      Part-Time / Group Advisory
+                      Part-Time Role
                     </span>
                     <span className="text-slate-500 dark:text-[#94A3B8]">
                       {exp.period}

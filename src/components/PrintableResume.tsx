@@ -80,7 +80,7 @@ export function PrintableResume() {
               </p>
               <span className="text-[11px] font-mono text-slate-600 shrink-0">
                 {exp.period} ·{' '}
-                {exp.isConcurrent ? 'Part-Time Advisory' : exp.location}
+                {exp.isConcurrent ? 'Part-Time Role' : exp.location}
               </span>
             </div>
             {exp.progressionSteps && (

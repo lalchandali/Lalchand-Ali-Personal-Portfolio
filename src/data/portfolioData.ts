@@ -98,18 +98,19 @@ export const PROFILE = {
   name: 'MD LAL CHAND ALI',
   displayName: 'Md Lal Chand Ali',
   designation:
-    'Software Engineer | IT Service Management | Business Operations | AI & Automation',
+    'Software Engineer | Full-Stack Development | AI/ML & Automation',
   positioning:
-    'A technology professional combining software engineering, IT service management, business operations, and AI-driven automation to deliver practical, scalable, and efficient digital solutions.',
+    'I build scalable web applications, backend systems, and intelligent automation solutions using modern technologies. With professional experience in software engineering, IT service management, and technical operations, I focus on solving real-world problems through reliable and maintainable technology.',
   summaryParagraphs: [
-    'Results-driven Software Engineer and Computer Science & Engineering graduate with 7+ years of progressive professional experience at Softzino Technologies, advancing from Development Assistant to Software Engineer.',
-    'Skilled in Python, PHP, Laravel, FastAPI, React.js, IT Service Management (ITSM), and AI-driven automation workflows. Combines full-stack development capabilities with system troubleshooting, prompt engineering, and business operations management to deliver reliable, efficient, and technology-driven solutions.',
-    'Additionally possesses formal knowledge of Competency-Based Assessment (CBA), Competency-Based Training and Assessment (CBT&A), competency standards, assessment methods, and structured skills evaluation.',
+    'I am a Software Engineer and Computer Science & Engineering (CSE) graduate from Uttara University with 7+ years of continuous tenure at Softzino Technologies, advancing from Development Assistant to Senior Executive (IT), Associate Software Engineer, and Software Engineer.',
+    'My core work centers on full-stack web development—designing REST APIs, role-based portals, and responsive interfaces with Python, FastAPI, PHP, Laravel, and React.js—paired with AI-assisted workflows and prompt-driven process automation.',
+    'Alongside software engineering, I provide supporting expertise in IT Service Management (ITSM), server maintenance, and operations, and hold formal NSDA credentials in Competency-Based Assessment (CBA) and CBT&A evaluation methods.',
   ],
   location: 'Dhaka, Bangladesh',
   phone: '+880 1717-080704',
   email: 'lalchandalibd@gmail.com',
-  availability: 'Open to Software Engineering, ITSM & AI Automation Collaborations',
+  availability:
+    'MD LAL CHAND ALI · Open to Software Engineering & Automation Roles',
   experienceYearsLabel: '7+ Years',
   socials: [
     {
@@ -138,55 +139,55 @@ export function resolveAssetPath(assetPath: string): string {
 
 export const HERO_IMAGE = {
   src: resolveAssetPath('assets/aistudio/my_photo_1_a247e1c4.png'),
-  alt: 'Professional portrait of Md Lal Chand Ali, Software Engineer',
+  alt: 'Portrait of Md Lal Chand Ali, Software Engineer',
 };
 
 export const ROTATING_KEYWORDS = [
-  'Full-Stack Software Engineering',
-  'IT Service Management (ITSM)',
-  'AI & Workflow Automation',
-  'Laravel & FastAPI Architecture',
+  'Full-Stack Web Development',
+  'Python, FastAPI & Laravel APIs',
+  'AI-Assisted Workflow Automation',
+  'ITSM & Infrastructure Reliability',
 ];
 
 export const ABOUT_HIGHLIGHTS = [
   {
     id: 'hl-exp',
-    title: '7+ Years Engineering Tenure',
+    title: 'Engineering Progression',
     subtitle: 'Softzino Technologies (2019–Present)',
     detail:
-      'Progressed from Development Assistant through Senior Executive (IT) and Associate Software Engineer to Software Engineer delivering enterprise systems.',
+      'Advanced from Development Assistant through Senior Executive (IT) and Associate Software Engineer to Software Engineer delivering production systems.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-eng',
-    title: 'Full-Stack Engineering',
+    title: 'Full-Stack Development',
     subtitle: 'Python · FastAPI · PHP · Laravel · React.js',
     detail:
-      'Architects maintainable backend APIs, role-based portals, authentication flows, and responsive React.js web interfaces.',
+      'Builds modular REST APIs, token authentication flows, relational schemas, and responsive single-page interfaces.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-itsm',
-    title: 'IT Service Management',
-    subtitle: 'Infrastructure Reliability & Root-Cause Analysis',
+    title: 'ITSM & Infrastructure',
+    subtitle: 'Supporting Technical Operations Expertise',
     detail:
-      'Hands-on server administration, incident governance, structured debugging, and SLA-oriented technical support.',
+      'Handles server administration, structured root-cause analysis, and dependable enterprise technical support.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-ai',
-    title: 'AI-Driven Workflows',
-    subtitle: 'Prompt Engineering & Automation Scripts',
+    title: 'AI & Workflow Automation',
+    subtitle: 'Prompt Engineering & Python Tooling',
     detail:
-      'Applies prompt engineering and Python automation inside developer and ITSM triage pipelines to accelerate diagnosis and delivery.',
+      'Applies structured prompt patterns and Python scripts inside developer and support workflows to speed up triage and documentation.',
     span: 'md:col-span-3',
   },
   {
     id: 'hl-ops',
-    title: 'Operational & Assessment Breadth',
-    subtitle: 'Supporting Background in Operations & NSDA CBA',
+    title: 'Operations & NSDA CBA',
+    subtitle: 'Part-Time Advisory & Assessment Standards',
     detail:
-      'Complements core software engineering with hands-on IT advisory, fulfillment coordination, and formal NSDA competency evaluation standards.',
+      'Pairs software engineering with part-time logistics and IT advisory experience alongside formal NSDA knowledge in CBA and CBT&A evaluation.',
     span: 'md:col-span-3',
   },
 ];
@@ -206,12 +207,12 @@ export const EXPERIENCE: ExperienceItem[] = [
       'Software Engineer',
     ],
     summary:
-      'Primary full-time role leading full-stack web engineering, AI workflow automation, and enterprise IT service management.',
+      'Full-time software engineering role focused on full-stack web development, AI-assisted workflow automation, and supporting IT service management.',
     highlights: [
-      'Architect, develop, and maintain production web applications and REST APIs using Python, FastAPI, PHP, and Laravel.',
-      'Embed prompt engineering and AI-assisted diagnostic tooling into internal developer workflows to accelerate triage and documentation.',
-      'Manage IT service delivery (ITSM), Linux/server administration, preventive maintenance, and enterprise infrastructure support.',
-      'Lead technical debugging and root-cause analysis across production incidents, translating business specs into maintainable releases.',
+      'Design, build, and maintain web applications and REST APIs using Python, FastAPI, PHP, Laravel, and React.js.',
+      'Implement structured prompt engineering templates and Python helper scripts to accelerate debugging, log triage, and documentation.',
+      'Investigate production issues through root-cause analysis and translate functional requirements into maintainable code releases.',
+      'Support IT Service Management (ITSM), server administration, and preventive infrastructure maintenance.',
     ],
   },
   {
@@ -222,11 +223,11 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: 'BARNOi LIFESTYLE',
     isConcurrent: true,
     summary:
-      'Part-time shared-group operational mandate overseeing fulfillment workflows, order tracking, and customer escalation resolution.',
+      'Part-time operational role managing order fulfillment, courier coordination, and escalated customer inquiries.',
     highlights: [
-      'Direct daily order fulfillment, delivery partner coordination, and inventory movement across online retail operations.',
-      'Handle escalated customer inquiries and enforce service quality standards across order lifecycles.',
-      'Streamline logistics handoffs and fulfillment tracking alongside core engineering commitments.',
+      'Coordinate daily order dispatch, delivery partner handoffs, and inventory tracking across online retail operations.',
+      'Resolve escalated customer requests and maintain consistent service quality throughout order lifecycles.',
+      'Streamline dispatch and tracking routines alongside primary software engineering commitments.',
     ],
   },
   {
@@ -237,11 +238,11 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: 'BARNOi HOLDINGS LTD.',
     isConcurrent: true,
     summary:
-      'Part-time group IT advisory mandate aligning sister-entity technical requirements, vendor systems, and internal workflows.',
+      'Part-time IT advisory role supporting workstation readiness, vendor coordination, and internal technical operations.',
     highlights: [
-      'Advise on internal IT operations, workstation readiness, and technical service continuity across group initiatives.',
-      'Translate operational bottlenecks into structured software and automation specifications for business stakeholders.',
-      'Coordinate technical setup and IT support workflows on a scheduled part-time advisory basis.',
+      'Advise on internal IT operations, endpoint readiness, and technical service continuity across group teams.',
+      'Document recurring operational bottlenecks as clear software and process requirements for stakeholders.',
+      'Coordinate scheduled maintenance and vendor support on a part-time basis.',
     ],
   },
 ];
@@ -252,13 +253,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'Programming Languages',
     shortLabel: 'Languages',
     description:
-      'Core programming languages applied across enterprise web backends, automation scripts, and UI engineering.',
+      'Core languages used to build backend services, web interfaces, and automation utilities.',
     items: [
-      { name: 'Python', context: 'FastAPI services, automation & AI scripts' },
-      { name: 'PHP', context: 'Server-side web application development' },
-      { name: 'Java', context: 'Object-Oriented Programming & core CS systems' },
-      { name: 'JavaScript', context: 'Modern browser & SPA application logic' },
-      { name: 'HTML5 / CSS3', context: 'Semantic, accessible web markup & layout' },
+      { name: 'Python', context: 'FastAPI backends, scripting & AI automation' },
+      { name: 'PHP', context: 'Server-side logic & web portal engineering' },
+      { name: 'Java', context: 'Object-oriented programming & CS foundations' },
+      { name: 'JavaScript', context: 'Interactive frontend & SPA logic' },
+      { name: 'HTML5 / CSS3', context: 'Semantic markup & responsive styling' },
     ],
   },
   {
@@ -266,14 +267,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'Frameworks & Web Development',
     shortLabel: 'Frameworks',
     description:
-      'Production frameworks and API tools used to architect full-stack applications cleanly.',
+      'Web frameworks and API tooling used across backend services and frontend applications.',
     items: [
-      { name: 'Laravel', context: 'Enterprise PHP MVC architectures & APIs' },
-      { name: 'React.js', context: 'Component-driven interactive interfaces' },
-      { name: 'FastAPI', context: 'High-speed typed Python REST endpoints' },
-      { name: 'REST APIs', context: 'Structured contracts, CORS & token auth' },
-      { name: 'Tailwind CSS', context: 'Responsive utility-first design systems' },
-      { name: 'Axios', context: 'Client-server HTTP integration & interceptors' },
+      { name: 'Laravel', context: 'MVC architecture, policies & REST services' },
+      { name: 'React.js', context: 'Component-based interactive user interfaces' },
+      { name: 'FastAPI', context: 'Typed Python REST endpoints & validation' },
+      { name: 'REST APIs', context: 'Endpoint contracts, CORS & token auth' },
+      { name: 'Tailwind CSS', context: 'Responsive utility-first interface styling' },
+      { name: 'Axios', context: 'HTTP client integration & request handling' },
     ],
   },
   {
@@ -281,12 +282,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'AI & Automation',
     shortLabel: 'AI & Automation',
     description:
-      'Practical application of generative AI and automation workflows inside real developer and business operations.',
+      'Practical LLM integration and scripting techniques applied to software engineering and triage.',
     items: [
-      { name: 'Prompt Engineering', context: 'Structured templates for reliable outputs' },
-      { name: 'LLM Tools', context: 'Engineering research, code & workflow support' },
-      { name: 'AI-Assisted Workflows', context: 'Accelerating triage, docs & prototyping' },
-      { name: 'Automation', context: 'Repeatable scripts & operational process flows' },
+      { name: 'Prompt Engineering', context: 'Structured prompts for consistent analysis' },
+      { name: 'LLM Tools', context: 'Code review, debugging & research support' },
+      { name: 'AI-Assisted Workflows', context: 'Faster incident triage & documentation' },
+      { name: 'Automation', context: 'Repeatable Python scripts & task flows' },
     ],
   },
   {
@@ -294,12 +295,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'IT Service Management (ITSM)',
     shortLabel: 'ITSM',
     description:
-      'Keeping enterprise infrastructure dependable through proactive maintenance, debugging, and structured support.',
+      'Supporting expertise in server upkeep, structured troubleshooting, and technical service continuity.',
     items: [
-      { name: 'ITSM', context: 'Service delivery, incident handling & governance' },
-      { name: 'Infrastructure Maintenance', context: 'Server administration & uptime care' },
-      { name: 'Technical Troubleshooting', context: 'Debugging & root-cause analysis' },
-      { name: 'IT Support', context: 'End-to-end user & enterprise assistance' },
+      { name: 'ITSM', context: 'Incident workflows, SLAs & service coordination' },
+      { name: 'Infrastructure Maintenance', context: 'Linux/server upkeep & preventive checks' },
+      { name: 'Technical Troubleshooting', context: 'Log analysis & root-cause isolation' },
+      { name: 'IT Support', context: 'Workstation setup & end-user assistance' },
     ],
   },
   {
@@ -307,11 +308,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'Business & Operations',
     shortLabel: 'Operations',
     description:
-      'Hands-on business operations leadership aligning logistics, customer service, and technical consulting.',
+      'Supporting operational experience from part-time retail fulfillment and IT advisory roles.',
     items: [
-      { name: 'Logistics Management', context: 'Delivery coordination & inventory tracking' },
-      { name: 'Technical Sales', context: 'Translating technical value for clients' },
-      { name: 'Solution Consulting', context: 'Mapping business needs to digital systems' },
+      { name: 'Logistics Management', context: 'Dispatch coordination & stock tracking' },
+      { name: 'Technical Sales', context: 'Explaining technical capabilities clearly' },
+      { name: 'Solution Consulting', context: 'Translating business needs into specs' },
       { name: 'Customer Support', context: 'Escalation handling & service quality' },
     ],
   },
@@ -320,7 +321,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'Competency-Based Training & Assessment',
     shortLabel: 'CBA & CBT&A',
     description:
-      'Formal NSDA-certified expertise in competency standards, structured assessment methods, and skills evaluation.',
+      'Formal NSDA grounding in CBT&A frameworks, competency standards, and structured evaluation.',
     items: [
       {
         name: 'Competency-Based Assessment (CBA)',
@@ -328,19 +329,19 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       },
       {
         name: 'CBT&A',
-        context: 'Competency-Based Training & Assessment frameworks',
+        context: 'Competency-Based Training & Assessment standards',
       },
       {
         name: 'Competency Standards',
-        context: 'Aligning workplace performance with industry benchmarks',
+        context: 'Benchmarking performance against criteria',
       },
       {
         name: 'Assessment Methods',
-        context: 'Practical observation, questioning & evidence portfolios',
+        context: 'Observation, questioning & evidence review',
       },
       {
         name: 'Skills Evaluation',
-        context: 'Objective capability verification & feedback',
+        context: 'Objective capability checks & feedback',
       },
     ],
   },
@@ -350,29 +351,29 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'agromitra',
     title: 'AgroMitra – Smart Agricultural Management Platform',
-    subtitle: 'Full-Stack Digital Agriculture & Crop Decision Platform',
+    subtitle: 'Full-Stack Crop Decision & Agricultural Operations System',
     category: 'web',
-    categoryLabel: 'Full-Stack Engineering',
+    categoryLabel: 'Full-Stack Web',
     year: '2025',
-    role: 'Full-Stack Architect & Developer',
+    role: 'Full-Stack Developer',
     featured: true,
     summary:
-      'Designed and built a full-stack agricultural decision and operations platform pairing a Python FastAPI REST backend with a responsive React.js + Vite + Tailwind CSS dashboard for crop planning, soil macronutrient analysis, and market forecasting.',
+      'A full-stack web platform built with Python FastAPI and React.js that turns soil macronutrient inputs into structured crop plans. It addresses fragmented agricultural planning by integrating a rule-based crop recommendation API, seasonal crop calendars, market price forecasting, token authentication, and a local payment gateway.',
     keyFeatures: [
-      'Rule-based crop recommendation engine',
-      'Soil macronutrient analysis and input parsing',
-      'Crop calendar planning',
-      'Market price forecasting',
-      'Token-based authentication',
+      'Rule-based crop recommendation engine driven by soil inputs',
+      'Soil macronutrient analysis (N, P, K, pH) and input parsing',
+      'Seasonal crop calendar planning module',
+      'Market price forecasting view for harvest decisions',
+      'Token-based user authentication and protected endpoints',
       'Local payment gateway integration',
     ],
     contributions: [
-      'Designed frontend-backend architecture',
-      'Built FastAPI REST endpoints',
-      'Implemented React dashboard components',
-      'Handled CORS and API communication',
-      'Integrated token authentication flows',
-      'Structured scalable project layout',
+      'Designed decoupled FastAPI backend and React.js + Vite architecture',
+      'Built typed REST endpoints and soil analysis parsing in Python',
+      'Implemented responsive React.js + Tailwind CSS dashboard views',
+      'Configured CORS rules and Axios client-server communication',
+      'Integrated token authentication flows across protected routes',
+      'Structured modular backend and frontend directories for maintainability',
     ],
     stack: [
       'Python',
@@ -416,24 +417,24 @@ async def evaluate_crop_plan(
   {
     id: 'ai-workflow-automation',
     title: 'AI-Assisted Developer & ITSM Workflow Automation',
-    subtitle: 'Prompt Engineering & Root-Cause Triage Pipelines',
+    subtitle: 'Prompt Engineering & Python Diagnostic Triage Scripts',
     category: 'ai',
     categoryLabel: 'AI & Automation',
     year: '2025',
     role: 'Software Engineer · Softzino Technologies',
     summary:
-      'Integrated structured prompt engineering and Python automation scripts into internal engineering and IT service management workflows to standardize diagnostics, accelerate root-cause analysis, and improve operational clarity.',
+      'An internal engineering and ITSM workflow toolkit pairing Python log-parsing utilities with structured LLM prompt templates. It addresses slow manual debugging and inconsistent incident handoffs by standardizing error-trace summaries, root-cause checklists, and technical documentation.',
     keyFeatures: [
-      'Structured prompt templates for code review & debugging',
-      'Automated incident trace summarization in Python',
+      'Structured prompt templates for debugging and code review',
+      'Python utilities for automated service-trace excerpting',
       'Repeatable ITSM root-cause analysis checklists',
-      'Cross-team documentation & functional spec helpers',
+      'Standardized technical documentation and spec helpers',
     ],
     contributions: [
-      'Incorporated AI-powered tooling into daily developer workflows',
-      'Built Python helper utilities for log parsing and triage',
-      'Standardized prompt patterns for repeatable technical outputs',
-      'Connected troubleshooting findings to infrastructure support',
+      'Integrated LLM tools and prompt templates into daily engineering workflows',
+      'Built Python helper scripts for log sanitization and incident triage prep',
+      'Standardized prompt patterns for consistent diagnostic outputs',
+      'Connected triage summaries to infrastructure support escalations',
     ],
     stack: ['Python', 'Prompt Engineering', 'LLM Tools', 'REST APIs', 'ITSM'],
     image: resolveAssetPath(
@@ -441,7 +442,7 @@ async def evaluate_crop_plan(
     ),
     imageAlt:
       'Python automation and AI workflow terminal visualization in an engineering workspace',
-    repoStatusNote: 'Proprietary Enterprise Workflow · Architecture Case Study',
+    repoStatusNote: 'Internal Engineering Workflow · Architecture Case Study',
     demoStatusNote: 'Architecture Case Study & Triage Pattern',
     codeSnippet: {
       filename: 'automation/itsm_triage.py',
@@ -456,23 +457,23 @@ async def evaluate_crop_plan(
   {
     id: 'laravel-itsm-portal',
     title: 'Enterprise Laravel Operations & ITSM Service Portal',
-    subtitle: 'Role-Based Ticketing, Incident Escalation & Server Health Workflows',
+    subtitle: 'Role-Based Ticketing, SLA Escalation & Incident Audit Logs',
     category: 'itsm',
     categoryLabel: 'Laravel & ITSM',
     year: '2024',
     role: 'Software Engineer · Softzino Technologies',
     summary:
-      'Architected and maintained multi-role PHP & Laravel enterprise portals integrating IT service management (ITSM) ticket lifecycles, automated SLA escalation rules, and infrastructure health diagnostics.',
+      'A role-based PHP and Laravel operations portal built to centralize internal IT service requests, SLA tracking, and incident audit trails. It addresses fragmented support queues and delayed escalations through policy-enforced access control, automated SLA checks, and structured root-cause logs.',
     keyFeatures: [
-      'Role-based access control & multi-tenant permissions',
-      'Structured ITSM incident lifecycle & SLA escalation tracking',
-      'Automated server health checks & root-cause audit logs',
-      'RESTful API integration with internal operations tooling',
+      'Role-based access control (RBAC) and authorization policies',
+      'Structured ITSM ticket lifecycle and SLA escalation rules',
+      'Server health logging and root-cause audit trails',
+      'REST API integration with internal operational tools',
     ],
     contributions: [
-      'Built modular Laravel services, policies, and REST API endpoints',
-      'Designed normalized relational schemas for audit & incident trails',
-      'Aligned system troubleshooting logs with ITSM root-cause workflows',
+      'Developed modular Laravel services, policies, and REST API endpoints',
+      'Designed normalized relational database tables for tickets and audit logs',
+      'Implemented SLA breach checks aligned with L2 infrastructure escalation',
     ],
     stack: ['PHP', 'Laravel', 'REST APIs', 'MySQL', 'ITSM', 'Linux Server'],
     image: resolveAssetPath(
@@ -480,8 +481,8 @@ async def evaluate_crop_plan(
     ),
     imageAlt:
       'Enterprise service monitoring and ITSM operational health dashboard displaying live service telemetry and incident status',
-    repoStatusNote: 'Enterprise Architecture Case Study',
-    demoStatusNote: 'Enterprise Architecture & Laravel Service Pattern',
+    repoStatusNote: 'Architecture Case Study',
+    demoStatusNote: 'Architecture Case Study & Laravel Service Pattern',
     codeSnippet: {
       filename: 'app/Services/IncidentEscalationService.php',
       language: 'php',
@@ -506,35 +507,35 @@ async def evaluate_crop_plan(
 export const SERVICES: ServiceItem[] = [
   {
     id: 'srv-swe',
-    title: 'Full-Stack Software Engineering',
+    title: 'Full-Stack Web Development',
     summary:
-      'End-to-end architecture and delivery of scalable web portals, backend services, and clean REST APIs.',
+      'Design and delivery of maintainable web applications, structured REST APIs, and responsive user interfaces.',
     capabilities: [
       'Python (FastAPI), PHP (Laravel) & React.js systems',
-      'Authentication, RBAC & modular API architecture',
-      'Database design, performance tuning & deployment',
+      'Token authentication, RBAC & modular API design',
+      'Relational database modeling & production deployment',
     ],
   },
   {
     id: 'srv-itsm',
     title: 'IT Service Management & Infrastructure',
     summary:
-      'Dependable infrastructure administration, preventive server maintenance, and structured root-cause resolution.',
+      'Supporting expertise in server upkeep, structured debugging, and reliable IT operations.',
     capabilities: [
-      'Enterprise system administration & uptime governance',
-      'Technical troubleshooting & root-cause analysis',
+      'System administration & preventive server maintenance',
+      'Structured debugging & root-cause analysis',
       'Incident workflows, SLAs & operational continuity',
     ],
   },
   {
     id: 'srv-ai',
-    title: 'AI Workflows & Operations Automation',
+    title: 'AI Workflows & Process Automation',
     summary:
-      'Applying prompt engineering, LLM tools, and automation scripts to accelerate engineering and business execution.',
+      'Applying LLM tools, prompt engineering, and Python scripting to streamline engineering triage and business workflows.',
     capabilities: [
-      'Structured prompt engineering & AI-assisted triage',
-      'Python workflow automation & operational tooling',
-      'Logistics, customer support & process optimization',
+      'Structured prompt engineering & AI-assisted debugging',
+      'Python automation scripts for logs & recurring tasks',
+      'Process optimization across engineering & support teams',
     ],
   },
 ];
@@ -549,8 +550,8 @@ export const EDUCATION: EducationItem[] = [
     cgpa: '3.65 / 4.00',
     status: 'Graduate',
     highlights: [
-      'Strong academic foundation in algorithms, software engineering, OOP, and database systems.',
-      'Applied engineering principles across full-stack web architectures and AI-assisted systems.',
+      'Core coursework in algorithms, data structures, object-oriented programming, software engineering, and database systems.',
+      'Applied computer science principles across full-stack web architectures and automation systems.',
     ],
   },
 ];
@@ -566,7 +567,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     category: 'Assessment & Training',
     featured: true,
     summary:
-      'Certified capability in designing and conducting competency-based skills evaluations under national CBT&A frameworks.',
+      'Certified capability in designing and conducting competency-based skills evaluations under national CBT&A standards.',
     competencies: [
       'Competency-Based Assessment (CBA) execution',
       'CBT&A standards & assessment methods',
@@ -593,7 +594,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Hands-on routing, switching, IP addressing, and enterprise network infrastructure fundamentals.',
+      'Intensive 72-hour networking program covering routing, switching, IP subnetting, and enterprise network diagnostics.',
     competencies: [
       'Routing & switching fundamentals',
       'IP addressing, subnetting & VLANs',
@@ -627,12 +628,12 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate under BNQF covering workstation assembly, OS configuration, networking, and technical troubleshooting.',
+      'National Skills Certificate under BNQF covering OS installation, workstation hardware, basic networking, and troubleshooting.',
     competencies: [
       'Install, configure & optimize OS and utility software',
-      'Maintain & troubleshoot PCs and perform PC assembly',
+      'Maintain, assemble & troubleshoot PC workstations',
       'Basic networking, data backup & recovery',
-      'IT support fundamentals & workplace English interaction',
+      'IT support fundamentals & workplace communication',
     ],
   },
   {
@@ -662,11 +663,11 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate (220 hours, BNQF) in customer management techniques, software tools, service quality, and IT ethics.',
+      'National Skills Certificate (220 hours, BNQF) in client service quality, software support tools, and IT workplace standards.',
     competencies: [
-      'Customer management techniques & service quality compliance',
-      'Software tools in customer service & basic IT skills',
-      'Effective communication, presentations & teamwork',
+      'Customer management & service quality compliance',
+      'Customer service software tools & core IT skills',
+      'Clear communication, presentations & teamwork',
       'Workplace OHS & ethical standards in IT environments',
     ],
   },
@@ -697,12 +698,12 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate under BNQF covering spreadsheet business data management, small team leadership, and back-office operations.',
+      'National Skills Certificate under BNQF covering spreadsheet business reporting, team coordination, and back-office administration.',
     competencies: [
-      'Spreadsheets for business data & Bangla/English typing',
-      'Lead small teams & basic business development activities',
-      'Basic digital marketing, IT skills & clipping path',
-      'Customer soft skills, OHS & IT workplace ethics',
+      'Spreadsheets for business data & bilingual typing',
+      'Small team coordination & business support tasks',
+      'Digital media basics, IT skills & clipping path',
+      'Workplace OHS & IT ethics standards',
     ],
   },
   {
@@ -726,9 +727,9 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Certificate of Completion for successfully finishing the Simplilearn SkillUP online course covering Linux fundamentals and command-line workflows.',
+      'Completed the Simplilearn SkillUP online course covering Linux OS architecture, shell commands, and file permissions.',
     competencies: [
-      'Linux OS architecture & file system navigation',
+      'Linux OS architecture & filesystem navigation',
       'Essential shell commands & file permissions',
       'System environment & administration basics',
     ],
@@ -756,7 +757,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Certificate of Participation for completing the training program on Cybersecurity Awareness and AI Governance organized by Nationalist ICT Forum (NICTF).',
+      'Participation certificate for completing the NICTF training session on cybersecurity awareness and responsible AI governance.',
     competencies: [
       'Cybersecurity threat awareness & digital hygiene',
       'Responsible AI governance & risk mitigation',
@@ -785,9 +786,9 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Certificate of Participation in the online webinar organized by the Department of Research and Development, Bangladesh Space Research Society (BSRS).',
+      'Participation certificate for the BSRS online webinar on scientific methods, structured inquiry, and research discovery workflows.',
     competencies: [
-      'Exploring research ideas & scientific inquiry',
+      'Formulating research questions & scientific inquiry',
       'Scientific methods & structured evaluation',
       'Essential research tools & discovery workflows',
     ],
@@ -795,10 +796,10 @@ export const CERTIFICATIONS: CertificationItem[] = [
 ];
 
 export const LEADERSHIP_STRENGTHS: string[] = [
-  'Analytical Root-Cause Solving',
-  'Cross-Functional Team Coordination',
-  'Technical Stakeholder Communication',
-  'SLA & Operational Execution',
-  'Customer Escalation Management',
-  'Continuous Learning & Adaptability',
+  'Root-Cause Problem Solving',
+  'Cross-Functional Coordination',
+  'Clear Technical Communication',
+  'SLA & Process Execution',
+  'Stakeholder & Client Support',
+  'Continuous Technical Learning',
 ];

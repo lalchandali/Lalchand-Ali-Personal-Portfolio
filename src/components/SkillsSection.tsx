@@ -42,15 +42,15 @@ export function SkillsSection() {
         <RevealBlock className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-2.5">
             <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
-              Technical Capabilities
+              Technical Stack
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
               Technical Skills &amp; Core Competencies
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-              Applied technical stack spanning software engineering, AI-driven
-              automation, IT service management, business operations, and
-              competency-based assessment.
+              Verified technologies and practices across programming, full-stack
+              web development, AI workflows, and supporting ITSM, operations,
+              and NSDA assessment frameworks.
             </p>
           </div>
 

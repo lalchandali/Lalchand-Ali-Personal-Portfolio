@@ -345,15 +345,14 @@ export function ContactSection() {
           >
             <motion.div variants={staggerItemVariants} className="space-y-3">
               <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
-                Get In Touch
+                Contact
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-                Let&apos;s Build Something Meaningful.
+                Get in Touch.
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-                Open to software engineering engagements, IT service management
-                consulting, AI workflow automation, and technical operations
-                leadership.
+                Open to software engineering roles, full-stack web development,
+                AI workflow automation, and technical consulting.
               </p>
             </motion.div>
 
@@ -593,7 +592,7 @@ export function ContactSection() {
                   required
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  placeholder="Project collaboration, software engineering role, or consulting"
+                  placeholder="Software engineering role, project inquiry, or consulting"
                   className="w-full rounded-xl border border-slate-300 dark:border-[#263247] bg-white dark:bg-[#101827] px-3.5 py-2.5 text-sm text-[#0F172A] dark:text-[#F8FAFC] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7657F6]"
                 />
               </div>
@@ -612,7 +611,7 @@ export function ContactSection() {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Share details about your project, timeline, or technical requirements..."
+                  placeholder="Share details about the role, project scope, or timeline..."
                   className="w-full rounded-xl border border-slate-300 dark:border-[#263247] bg-white dark:bg-[#101827] px-3.5 py-2.5 text-sm text-[#0F172A] dark:text-[#F8FAFC] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7657F6] resize-y"
                 />
               </div>

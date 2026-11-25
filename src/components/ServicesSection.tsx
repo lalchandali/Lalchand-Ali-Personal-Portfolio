@@ -19,15 +19,15 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <RevealBlock className="max-w-2xl space-y-2.5">
           <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
-            What I Deliver
+            Capabilities
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-            Core Expertise &amp; Services
+            What I Deliver
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-            Multidisciplinary engineering, infrastructure reliability, workflow
-            automation, and operational consulting tailored to real business
-            demands.
+            Full-stack web engineering and practical workflow automation,
+            supported by dependable IT service management and technical
+            operations.
           </p>
         </RevealBlock>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/sitemap.xml

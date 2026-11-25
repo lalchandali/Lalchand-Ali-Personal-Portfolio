@@ -55,15 +55,15 @@ export function ProjectsSection() {
         <RevealBlock className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-2.5">
             <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
-              Portfolio Showcase
+              Engineering Portfolio
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
-              Selected Projects &amp; Engineering Work
+              Selected Projects
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-              Architecture-focused engineering work across full-stack FastAPI +
-              React platforms, AI-assisted ITSM automation, and enterprise
-              Laravel portals.
+              Applied engineering work across full-stack FastAPI + React
+              platforms, AI-assisted diagnostic automation, and Laravel ITSM
+              service portals.
             </p>
           </div>
 

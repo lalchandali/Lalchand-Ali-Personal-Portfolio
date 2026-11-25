@@ -6,6 +6,7 @@ interface SafeImageProps {
   alt: string;
   className?: string;
   fallbackTitle?: string;
+  loading?: 'lazy' | 'eager';
 }
 
 export function SafeImage({
@@ -13,6 +14,7 @@ export function SafeImage({
   alt,
   className = '',
   fallbackTitle,
+  loading = 'lazy',
 }: SafeImageProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -21,13 +23,13 @@ export function SafeImage({
       <div
         role="img"
         aria-label={alt}
-        className={`flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200/80 dark:from-[#101827] dark:via-[#141F30] dark:to-[#080B14] text-slate-500 dark:text-[#94A3B8] p-6 text-center ${className}`}
+        className={`flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 p-6 text-center ${className}`}
       >
         <Code2
-          className="w-7 h-7 text-[#7657F6] dark:text-[#00C2D9] mb-2"
+          className="w-7 h-7 text-blue-600 dark:text-sky-400 mb-2"
           aria-hidden="true"
         />
-        <span className="text-xs font-medium text-slate-700 dark:text-[#F8FAFC] max-w-[26ch] leading-snug">
+        <span className="text-xs font-medium text-slate-700 dark:text-slate-200 max-w-[26ch] leading-snug">
           {fallbackTitle || alt}
         </span>
       </div>
@@ -39,7 +41,7 @@ export function SafeImage({
       src={src}
       alt={alt}
       referrerPolicy="no-referrer"
-      loading="lazy"
+      loading={loading}
       onError={() => setHasError(true)}
       className={className}
     />

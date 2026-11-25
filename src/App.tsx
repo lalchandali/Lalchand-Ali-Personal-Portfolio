@@ -16,12 +16,12 @@ import { ThemeProvider } from './context/ThemeProvider';
 import { downloadResumePdf } from './utils/generateResumePdf';
 
 const MARQUEE_ITEMS = [
-  '7+ Years at Softzino Technologies',
+  'Software Engineer · Full-Stack Development',
   'Python · FastAPI · PHP · Laravel · React.js',
+  'AI/ML Workflows & Process Automation',
   'IT Service Management (ITSM) & Infrastructure',
-  'AI & Workflow Automation',
-  'Full-Stack Architecture & Root-Cause Analysis',
-  'Uttara University CSE',
+  'Softzino Technologies · Dhaka',
+  'BSc in CSE · Uttara University',
 ];
 
 export default function App() {
