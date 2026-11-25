@@ -41,7 +41,7 @@ export function AboutSection() {
               variants={staggerItemVariants}
               className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance"
             >
-              Full-Stack Engineering &amp; Practical Automation.
+              Full-Stack Engineering &amp; AI Automation.
             </motion.h2>
 
             <div className="space-y-4 text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] leading-relaxed">

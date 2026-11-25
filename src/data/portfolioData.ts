@@ -100,17 +100,17 @@ export const PROFILE = {
   designation:
     'Software Engineer | Full-Stack Development | AI/ML & Automation',
   positioning:
-    'I am a Software Engineer focused on building reliable web applications, backend systems, and intelligent automation solutions. With professional experience across software engineering, IT service management, and technical operations, I combine practical engineering skills with problem-solving to deliver useful, maintainable digital solutions.',
+    'Software Engineer building scalable web applications, backend systems, and practical AI/ML & workflow automation solutions. Backed by full-stack engineering, IT Service Management (ITSM), and technical operations experience to deliver reliable, maintainable digital systems.',
   summaryParagraphs: [
-    'I am a Software Engineer with a BSc in Computer Science & Engineering from Uttara University and 7+ years of professional experience at Softzino Technologies, progressing from Development Assistant to Software Engineer.',
-    'My core work centers on full-stack software development using Python, FastAPI, PHP, Laravel, and React.js, alongside AI-assisted workflows and process automation to keep development and troubleshooting efficient.',
-    'Alongside software delivery, I support IT Service Management (ITSM), server infrastructure, and technical troubleshooting, complemented by part-time business operations experience and formal NSDA credentials in Competency-Based Assessment (CBA/CBT&A).',
+    'Backed by a BSc in Computer Science & Engineering from Uttara University and 7+ years of continuous growth at Softzino Technologies, I progressed from Development Assistant through Senior Executive (IT) and Associate Software Engineer to Software Engineer.',
+    'My core engineering practice centers on full-stack development with Python, FastAPI, PHP, Laravel, and React.js—paired with AI-assisted workflows and scripting automation to ship clean APIs, responsive interfaces, and maintainable systems.',
+    'This software foundation is complemented by hands-on IT Service Management (ITSM) and server infrastructure upkeep, alongside part-time business operations experience and formal NSDA credentials in Competency-Based Assessment (CBA/CBT&A).',
   ],
   location: 'Dhaka, Bangladesh',
   phone: '+880 1717-080704',
   email: 'lalchandalibd@gmail.com',
   availability:
-    'Open to Software Engineering, ITSM & AI Automation Collaborations',
+    'Open to Software Engineering, Full-Stack & AI/ML Automation Roles',
   experienceYearsLabel: '7+ Years',
   socials: [
     {
@@ -146,16 +146,16 @@ export const ROTATING_KEYWORDS = [
   'Full-Stack Development',
   'Python, FastAPI & React.js',
   'PHP, Laravel & REST APIs',
-  'AI & Workflow Automation',
+  'AI/ML & Workflow Automation',
 ];
 
 export const ABOUT_HIGHLIGHTS = [
   {
     id: 'hl-exp',
-    title: 'Career Progression',
-    subtitle: 'Softzino Technologies (2019–Present)',
+    title: '7+ Years at Softzino',
+    subtitle: 'Development Assistant → Software Engineer',
     detail:
-      'Grew across four engineering and IT roles into a full-time Software Engineer building and maintaining production web systems.',
+      'Grew across four progressive technical roles delivering production web applications, backend services, and system reliability since 2019.',
     span: 'md:col-span-2',
   },
   {
@@ -163,31 +163,31 @@ export const ABOUT_HIGHLIGHTS = [
     title: 'Full-Stack Development',
     subtitle: 'Python · FastAPI · PHP · Laravel · React.js',
     detail:
-      'Builds modular REST APIs, token authentication flows, relational schemas, and responsive single-page interfaces.',
+      'Architects RESTful endpoints, token authentication, role-based access policies, and responsive single-page interfaces.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-itsm',
     title: 'ITSM & Infrastructure',
-    subtitle: 'Supporting Technical Operations',
+    subtitle: 'Supporting Technical Expertise',
     detail:
-      'Handles server administration, structured root-cause analysis, and dependable enterprise technical troubleshooting.',
+      'Supports enterprise Linux server administration, incident diagnostics, and structured root-cause analysis.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-ai',
-    title: 'AI & Workflow Automation',
-    subtitle: 'Prompt Engineering & Python Tooling',
+    title: 'AI-Assisted Workflows',
+    subtitle: 'Prompt Engineering & Python Automation',
     detail:
-      'Applies structured prompt patterns and Python scripts inside developer workflows to assist with triage and documentation.',
+      'Integrates structured LLM prompts and Python utility scripts into engineering workflows for faster triage, testing, and documentation.',
     span: 'md:col-span-3',
   },
   {
     id: 'hl-ops',
     title: 'Operations & NSDA CBA',
-    subtitle: 'Business Operations & Assessment Standards',
+    subtitle: 'Supporting Background',
     detail:
-      'Complements software engineering with part-time logistics and IT advisory work plus formal NSDA CBT&A and CBA evaluation knowledge.',
+      'Brings part-time logistics and IT operations coordination alongside formal NSDA CBT&A and CBA assessment credentials.',
     span: 'md:col-span-3',
   },
 ];
@@ -580,19 +580,19 @@ export const EDUCATION: EducationItem[] = [
 export const CERTIFICATIONS: CertificationItem[] = [
   {
     id: 'cert-cba-l4',
-    title: 'Competency-Based Assessment – Level 4',
+    title: 'Competency-Based Assessment (CBA) – Level 4',
     issuer: 'National Skills Development Authority (NSDA)',
     issuerShort: 'NSDA',
     track: 'nsda',
-    credentialMeta: 'NSDA Level 4',
+    credentialMeta: 'NSDA Level 4 · CBA / CBT&A',
     category: 'Assessment & Training',
     featured: true,
     summary:
-      'Certified capability in designing and conducting competency-based skills evaluations under national CBT&A standards.',
+      'National Competency-Based Assessment (CBA) credential under Competency-Based Training and Assessment (CBT&A) standards for structured skills evaluation.',
     competencies: [
       'Competency-Based Assessment (CBA) execution',
-      'CBT&A standards & assessment methods',
-      'Practical skills evaluation & evidence review',
+      'Competency-Based Training and Assessment (CBT&A) standards',
+      'Competency standards, assessment methods & evidence review',
     ],
   },
   {
@@ -601,7 +601,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: 'CSL Training',
     issuerShort: 'CSL Training',
     track: 'networking',
-    credentialMeta: '72 Hours Intensive',
+    credentialMeta: 'Cisco CCNA · 72 Hours',
     category: 'Networking & Infrastructure',
     featured: true,
     credentialNumber: 'CSL-KUR-OFF-CCN-23802',
@@ -615,11 +615,11 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Intensive 72-hour networking program covering routing, switching, IP subnetting, and enterprise network diagnostics.',
+      'Intensive 72-hour Cisco Certified Network Associate (CCNA) training program covering routing, switching, IP subnetting, and enterprise network diagnostics.',
     competencies: [
-      'Routing & switching fundamentals',
-      'IP addressing, subnetting & VLANs',
-      'Network troubleshooting & diagnostics',
+      'Enterprise routing & switching fundamentals',
+      'IP addressing, subnetting & VLAN configuration',
+      'Network troubleshooting & link diagnostics',
     ],
   },
   {
@@ -649,11 +649,11 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate under BNQF covering OS installation, workstation hardware, basic networking, and troubleshooting.',
+      'National Skills Certificate under the Bangladesh National Qualifications Framework (BNQF) covering OS installation, workstation maintenance, basic networking, and troubleshooting.',
     competencies: [
-      'Install, configure & optimize OS and utility software',
-      'Maintain, assemble & troubleshoot PC workstations',
-      'Basic networking, data backup & recovery',
+      'OS and utility software installation & optimization',
+      'PC workstation assembly, maintenance & troubleshooting',
+      'Basic networking, data backup & system recovery',
       'IT support fundamentals & workplace communication',
     ],
   },
@@ -663,7 +663,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: 'National Skills Development Authority (NSDA)',
     issuerShort: 'NSDA',
     track: 'nsda',
-    credentialMeta: 'NSDA Level 3 · 220 Hours',
+    credentialMeta: 'NSDA Level 3 · BNQF · 220 Hours',
     category: 'Client & Operations',
     credentialNumber: 'NSC-ICT-PCS-L3-001412',
     registrationNo: 'REG-ICT-PCS-L3-001366',
@@ -684,11 +684,11 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate (220 hours, BNQF) in client service quality, software support tools, and IT workplace standards.',
+      'National Skills Certificate (220 hours) under the Bangladesh National Qualifications Framework (BNQF) covering client service management, support tooling, and IT workplace communication.',
     competencies: [
       'Customer management & service quality compliance',
-      'Customer service software tools & core IT skills',
-      'Clear communication, presentations & teamwork',
+      'Customer service software tools & core IT operations',
+      'Structured communication, presentations & teamwork',
       'Workplace OHS & ethical standards in IT environments',
     ],
   },
@@ -719,10 +719,10 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'National Skills Certificate under BNQF covering spreadsheet business reporting, team coordination, and back-office administration.',
+      'National Skills Certificate under the Bangladesh National Qualifications Framework (BNQF) covering spreadsheet reporting, team coordination, and back-office operations.',
     competencies: [
-      'Spreadsheets for business data & bilingual typing',
-      'Small team coordination & business support tasks',
+      'Spreadsheet business reporting & bilingual typing',
+      'Small team coordination & back-office support',
       'Digital media basics, IT skills & clipping path',
       'Workplace OHS & IT ethics standards',
     ],
@@ -733,7 +733,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: 'Simplilearn | SkillUP',
     issuerShort: 'Simplilearn SkillUP',
     track: 'training',
-    credentialMeta: 'Online Course',
+    credentialMeta: 'Course Completion',
     category: 'Linux & Systems',
     credentialNumber: '4760301',
     issuedDate: '04 Jan 2024',
@@ -748,7 +748,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Completed the Simplilearn SkillUP online course covering Linux OS architecture, shell commands, and file permissions.',
+      'Online course completion certificate from Simplilearn SkillUP covering Linux OS architecture, shell commands, and filesystem permissions.',
     competencies: [
       'Linux OS architecture & filesystem navigation',
       'Essential shell commands & file permissions',
@@ -778,7 +778,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Participation certificate for completing the NICTF training session on cybersecurity awareness and responsible AI governance.',
+      'Training participation certificate from NICTF covering cybersecurity hygiene, threat awareness, and responsible AI governance.',
     competencies: [
       'Cybersecurity threat awareness & digital hygiene',
       'Responsible AI governance & risk mitigation',
@@ -791,7 +791,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: 'Bangladesh Space Research Society (BSRS)',
     issuerShort: 'BSRS',
     track: 'training',
-    credentialMeta: 'Online Webinar',
+    credentialMeta: 'Webinar Participation',
     category: 'Research & Methodology',
     issuedDate: '13 Nov 2026',
     certificateUrl: resolveAssetPath(
@@ -807,11 +807,11 @@ export const CERTIFICATIONS: CertificationItem[] = [
       },
     ],
     summary:
-      'Participation certificate for the BSRS online webinar on scientific methods, structured inquiry, and research discovery workflows.',
+      'Webinar participation certificate from BSRS covering scientific inquiry, research methodology, and structured discovery workflows.',
     competencies: [
-      'Formulating research questions & scientific inquiry',
+      'Research question formulation & scientific inquiry',
       'Scientific methods & structured evaluation',
-      'Essential research tools & discovery workflows',
+      'Research tools & discovery workflows',
     ],
   },
 ];

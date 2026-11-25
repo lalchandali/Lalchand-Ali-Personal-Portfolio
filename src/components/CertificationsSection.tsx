@@ -92,7 +92,7 @@ export function CertificationsSection() {
                 ·
               </span>
               <span className="text-slate-500 dark:text-[#94A3B8]">
-                4 NSDA National · 1 Cisco CCNA · 3 Training &amp; Sessions
+                4 NSDA National · 1 Cisco CCNA Training · 3 Courses &amp; Sessions
               </span>
             </div>
 
@@ -101,9 +101,9 @@ export function CertificationsSection() {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
-              National competency credentials (NSDA), Cisco CCNA networking
-              training, and verified courses in Linux, cybersecurity, AI
-              governance, and research fundamentals.
+              National skills credentials (NSDA), intensive Cisco CCNA
+              networking training, and completed courses or sessions in Linux,
+              cybersecurity, AI governance, and research fundamentals.
             </p>
           </div>
 
@@ -279,9 +279,13 @@ export function CertificationsSection() {
                     <span className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-[#A3F7C5] font-medium">
                       <ShieldCheck className="w-4 h-4" aria-hidden="true" />
                       <span>
-                        {cert.certificateUrl
-                          ? 'Certificate Attached'
-                          : 'Completed Credential'}
+                        {cert.track === 'training'
+                          ? cert.credentialMeta === 'Course Completion'
+                            ? 'Course Certificate Attached'
+                            : 'Participation Certificate'
+                          : cert.certificateUrl
+                            ? 'Certificate Attached'
+                            : 'Completed Credential'}
                       </span>
                     </span>
 
@@ -318,8 +322,8 @@ export function CertificationsSection() {
             >
               <span>
                 {showAll
-                  ? 'Show Fewer'
-                  : `Show All (${filteredCertifications.length})`}
+                  ? 'Show Top 4 Credentials'
+                  : `Show All Credentials (${filteredCertifications.length})`}
               </span>
               {showAll ? (
                 <ChevronUp className="w-4 h-4" aria-hidden="true" />
@@ -517,7 +521,9 @@ export function CertificationsSection() {
 
                 <div className="rounded-xl border border-slate-200 dark:border-[#263247] bg-slate-50 dark:bg-[#101827] p-4 space-y-2.5">
                   <h4 className="font-display text-sm font-semibold">
-                    Units of Competency Covered
+                    {activeCert.track === 'nsda'
+                      ? 'Units of Competency Covered'
+                      : 'Topics & Skills Covered'}
                   </h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-[#94A3B8]">
                     {activeCert.competencies.map((item) => (
