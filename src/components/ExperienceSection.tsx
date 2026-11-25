@@ -53,9 +53,9 @@ export function ExperienceSection() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 pb-6 border-b border-slate-200 dark:border-[#263247]">
               <div className="space-y-1.5">
                 <div className="flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#6243E8] dark:text-[#A3F7C5]">
-                  <span>Full-Time Engineering Tenure</span>
+                  <span>Full-Time Engineering Role</span>
                   <span aria-hidden="true">·</span>
-                  <span>7+ Years</span>
+                  <span>Primary Tenure</span>
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0F172A] dark:text-[#F8FAFC]">
                   {primaryRole.role}

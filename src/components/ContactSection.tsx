@@ -351,8 +351,10 @@ export function ContactSection() {
                 Get in Touch.
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-                Open to software engineering roles, full-stack web development,
-                AI workflow automation, and technical consulting.
+                I&apos;m open to meaningful opportunities in software
+                engineering, full-stack development, AI-driven automation, and
+                technology-focused problem-solving. Let&apos;s connect and
+                explore how we can build practical digital solutions together.
               </p>
             </motion.div>
 

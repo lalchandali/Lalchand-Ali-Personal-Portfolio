@@ -2,10 +2,9 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
-import {fileURLToPath} from 'url';
 import {defineConfig} from 'vite';
 
-const rootDir = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = process.cwd();
 
 export default defineConfig(({command}) => {
   const base =
@@ -29,7 +28,10 @@ export default defineConfig(({command}) => {
           const distDir = path.resolve(rootDir, 'dist');
           const srcAssets = path.resolve(rootDir, 'src/assets');
           const distAssets = path.resolve(distDir, 'src/assets');
-          if (fs.existsSync(distDir) && fs.existsSync(srcAssets)) {
+          if (!fs.existsSync(distDir)) {
+            return;
+          }
+          if (fs.existsSync(srcAssets)) {
             fs.cpSync(srcAssets, distAssets, {recursive: true, force: true});
           }
           const indexHtml = path.join(distDir, 'index.html');

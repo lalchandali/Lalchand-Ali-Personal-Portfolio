@@ -1,55 +1,58 @@
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowUp, Facebook, Github, Linkedin, Mail } from 'lucide-react';
 import { PROFILE } from '../data/portfolioData';
 import { RevealBlock } from './MotionReveal';
 
 const QUICK_LINKS = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'expertise', label: 'Expertise' },
-  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'credentials', label: 'Education' },
-  { id: 'achievements', label: 'Achievements' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'certifications', label: 'Certifications' },
   { id: 'contact', label: 'Contact' },
 ];
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const linkedin = PROFILE.socials.find((s) => s.label === 'LinkedIn');
-  const github = PROFILE.socials.find((s) => s.label === 'GitHub');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-white dark:bg-[#0F172A] border-t border-slate-200 dark:border-slate-800/80 transition-colors duration-200 no-print">
-      <RevealBlock className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <footer className="bg-[#F8FAFC] dark:bg-[#080B14] border-t border-slate-200 dark:border-[#263247] transition-colors duration-200 no-print">
+      <RevealBlock className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          {/* Identity Summary */}
-          <div className="md:col-span-5 space-y-2">
-            <p className="font-display font-bold text-base text-slate-900 dark:text-slate-100">
-              {PROFILE.displayName}
+          {/* Brand Summary */}
+          <div className="md:col-span-5 space-y-2.5">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7657F6] to-[#00C2D9] text-white font-display font-bold text-xs flex items-center justify-center">
+                {PROFILE.initials}
+              </span>
+              <span className="font-display font-bold text-base text-[#0F172A] dark:text-[#F8FAFC]">
+                {PROFILE.name}
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+              {PROFILE.designation}
             </p>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              {PROFILE.headline}
-            </p>
-            <p className="text-xs text-slate-500 dark:text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-[#94A3B8]">
               {PROFILE.location}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-4 space-y-2.5">
-            <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Sections
+            <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8]">
+              Navigation
             </h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-600 dark:text-slate-400">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-600 dark:text-[#94A3B8]">
               {QUICK_LINKS.map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
-                    className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
+                    className="hover:text-[#6243E8] dark:hover:text-[#F8FAFC] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -58,59 +61,74 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Profiles */}
+          {/* Email & Socials */}
           <div className="md:col-span-3 space-y-3">
-            <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8]">
               Direct Contact
             </h3>
-            <a
-              href={`mailto:${PROFILE.email}`}
-              className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-              <span>{PROFILE.email}</span>
-            </a>
+            <div className="space-y-1.5 text-xs text-slate-600 dark:text-[#94A3B8]">
+              <a
+                href={`mailto:${PROFILE.email}`}
+                className="flex items-center gap-2 hover:text-[#6243E8] dark:hover:text-[#F8FAFC] transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <span>{PROFILE.email}</span>
+              </a>
+            </div>
 
-            <div className="flex items-center gap-2.5 pt-1">
-              {linkedin && (
-                <a
-                  href={linkedin.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
-                  className="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#111827] flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
-                >
-                  <Linkedin className="w-4 h-4" aria-hidden="true" />
-                </a>
-              )}
-              {github && (
-                <a
-                  href={github.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub profile"
-                  className="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#111827] flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
-                >
-                  <Github className="w-4 h-4" aria-hidden="true" />
-                </a>
-              )}
+            <div className="flex items-center gap-3 pt-1">
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                href={PROFILE.socials[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
+              >
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                href={PROFILE.socials[1].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                href={PROFILE.socials[2].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook profile"
+                className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
+              >
+                <Facebook className="w-4 h-4" aria-hidden="true" />
+              </motion.a>
             </div>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div className="pt-6 border-t border-slate-200 dark:border-[#263247] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-[#94A3B8]">
           <p>
             © {year} {PROFILE.name}. All rights reserved.
           </p>
 
-          <button
+          <motion.button
             type="button"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#111827] text-slate-700 dark:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] text-slate-700 dark:text-[#F8FAFC] hover:border-[#7657F6] dark:hover:border-[#00C2D9] transition-colors cursor-pointer"
           >
             <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Back to Top</span>
-          </button>
+          </motion.button>
         </div>
       </RevealBlock>
     </footer>
