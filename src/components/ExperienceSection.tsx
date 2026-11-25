@@ -3,11 +3,12 @@ import {
   Building2,
   Calendar,
   CheckCircle2,
+  Compass,
   GitCommitHorizontal,
   Layers,
   MapPin,
 } from 'lucide-react';
-import { EXPERIENCE } from '../data/portfolioData';
+import { EXPERIENCE, LEADERSHIP_STRENGTHS } from '../data/portfolioData';
 import {
   EXECUTIVE_EASE,
   RevealBlock,
@@ -109,6 +110,7 @@ export function ExperienceSection() {
                       <motion.li
                         key={step}
                         variants={staggerItemVariants}
+                        whileHover={{ y: -2 }}
                         className={`rounded-xl border p-3.5 transition-colors ${
                           isCurrent
                             ? 'border-[#7657F6]/60 bg-[#7657F6]/8 dark:bg-[#7657F6]/15'
@@ -137,57 +139,66 @@ export function ExperienceSection() {
 
             {/* Responsibilities */}
             <div className="pt-6">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed">
+              <motion.ul
+                variants={staggerGridVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT_CONFIG}
+                className="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed"
+              >
                 {primaryRole.highlights.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-2.5">
+                  <motion.li
+                    key={bullet}
+                    variants={staggerItemVariants}
+                    className="flex items-start gap-2.5"
+                  >
                     <CheckCircle2
                       className="w-4 h-4 mt-0.5 text-[#6243E8] dark:text-[#00C2D9] shrink-0"
                       aria-hidden="true"
                     />
                     <span>{bullet}</span>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
           </motion.article>
         )}
 
         {/* Concurrent Roles Subsection */}
-        <RevealBlock className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="space-y-4">
+          <RevealBlock className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Layers
                 className="w-4 h-4 text-[#0284C7] dark:text-[#00C2D9]"
                 aria-hidden="true"
               />
               <h3 className="font-display text-lg font-semibold text-[#0F172A] dark:text-[#F8FAFC]">
-                Concurrent IT &amp; Business Operations Roles
+                Part-Time Group IT &amp; Operations Advisory
               </h3>
             </div>
             <p className="text-xs text-slate-500 dark:text-[#94A3B8]">
-              Held concurrently alongside software engineering at Softzino
-              Technologies
+              Shared BARNOi group mandates held part-time alongside primary
+              engineering at Softzino Technologies
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {concurrentRoles.map((exp, idx) => (
+          <motion.div
+            variants={staggerGridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT_CONFIG}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          >
+            {concurrentRoles.map((exp) => (
               <motion.article
                 key={exp.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={VIEWPORT_CONFIG}
-                transition={{
-                  duration: 0.5,
-                  delay: idx * 0.08,
-                  ease: EXECUTIVE_EASE,
-                }}
+                variants={staggerItemVariants}
                 className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] p-6 flex flex-col justify-between gap-5 hover:border-[#7657F6]/50 dark:hover:border-[#00C2D9]/50 transition-colors"
               >
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                     <span className="text-[#0284C7] dark:text-[#00C2D9] font-medium">
-                      Concurrent Role · Active
+                      Part-Time / Group Advisory
                     </span>
                     <span className="text-slate-500 dark:text-[#94A3B8]">
                       {exp.period}
@@ -200,6 +211,9 @@ export function ExperienceSection() {
                     </h4>
                     <p className="text-sm font-semibold text-[#6243E8] dark:text-[#A3F7C5] mt-1">
                       {exp.company}
+                    </p>
+                    <p className="text-xs text-slate-500 dark:text-[#94A3B8] mt-1.5 leading-relaxed">
+                      {exp.summary}
                     </p>
                   </div>
 
@@ -217,8 +231,33 @@ export function ExperienceSection() {
                 </div>
               </motion.article>
             ))}
-          </div>
-        </RevealBlock>
+          </motion.div>
+
+          <RevealBlock
+            delay={0.08}
+            className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-3"
+          >
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9] shrink-0">
+              <Compass className="w-4 h-4" aria-hidden="true" />
+              <span>Leadership &amp; Execution</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8]">
+              {LEADERSHIP_STRENGTHS.map((trait, index) => (
+                <span key={trait} className="inline-flex items-center gap-4">
+                  <span>{trait}</span>
+                  {index < LEADERSHIP_STRENGTHS.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="text-slate-300 dark:text-[#263247]"
+                    >
+                      ·
+                    </span>
+                  )}
+                </span>
+              ))}
+            </div>
+          </RevealBlock>
+        </div>
       </div>
     </section>
   );

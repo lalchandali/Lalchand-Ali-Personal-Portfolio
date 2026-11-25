@@ -4,7 +4,7 @@ import {
   EDUCATION,
   EXPERIENCE,
   HERO_IMAGE,
-  PROFESSIONAL_SKILLS,
+  LEADERSHIP_STRENGTHS,
   PROFILE,
   PROJECTS,
   SKILL_CATEGORIES,
@@ -152,7 +152,7 @@ export async function downloadResumePdf(): Promise<void> {
     4.1
   );
   drawWrapped(
-    `Email: ${PROFILE.email}  /  ${PROFILE.secondaryEmail}`,
+    `Email: ${PROFILE.email}`,
     marginX,
     headerTextWidth,
     8.6,
@@ -226,7 +226,7 @@ export async function downloadResumePdf(): Promise<void> {
     doc.setFontSize(8.4);
     doc.setTextColor(71, 85, 105);
     const rightMeta = exp.isConcurrent
-      ? `${exp.period} | Concurrent Role`
+      ? `${exp.period} | Part-Time Advisory`
       : `${exp.period} | ${exp.location}`;
     doc.text(rightMeta, pageWidth - marginX, y, { align: 'right' });
     y += 4.5;
@@ -322,29 +322,58 @@ export async function downloadResumePdf(): Promise<void> {
     y += 1.5;
   }
 
-  // Training & Certifications
+  // Training & Certifications (Grouped by Track)
   drawSectionTitle('Training & Certifications');
-  for (const cert of CERTIFICATIONS) {
-    ensureSpace(6);
-    doc.setFont('helvetica', 'normal');
+  const certGroups = [
+    {
+      label: 'National Skills Credentials (NSDA)',
+      items: CERTIFICATIONS.filter((c) => c.track === 'nsda'),
+    },
+    {
+      label: 'Networking & Infrastructure',
+      items: CERTIFICATIONS.filter((c) => c.track === 'networking'),
+    },
+    {
+      label: 'Online Training & Sessions',
+      items: CERTIFICATIONS.filter((c) => c.track === 'training'),
+    },
+  ];
+
+  for (const group of certGroups) {
+    if (group.items.length === 0) continue;
+    ensureSpace(8);
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(9);
-    doc.setTextColor(51, 65, 85);
-    doc.text('•', marginX + 1.5, y);
-    drawWrapped(
-      `${cert.title} — ${cert.issuer} (${cert.credentialMeta})`,
-      marginX + 5.5,
-      contentWidth - 5.5,
-      9,
-      [51, 65, 85],
-      'normal',
-      4.2
-    );
+    doc.setTextColor(15, 23, 42);
+    doc.text(group.label, marginX, y);
+    y += 4.2;
+
+    for (const cert of group.items) {
+      ensureSpace(6);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8.8);
+      doc.setTextColor(51, 65, 85);
+      doc.text('•', marginX + 1.5, y);
+      const idSuffix = cert.credentialNumber
+        ? ` [${cert.credentialNumber}]`
+        : '';
+      drawWrapped(
+        `${cert.title} — ${cert.issuerShort} (${cert.credentialMeta}${idSuffix})`,
+        marginX + 5.5,
+        contentWidth - 5.5,
+        8.8,
+        [51, 65, 85],
+        'normal',
+        4.1
+      );
+    }
+    y += 1.2;
   }
 
-  // Professional Skills
-  drawSectionTitle('Professional & Leadership Skills');
+  // Leadership & Execution
+  drawSectionTitle('Leadership & Execution');
   drawWrapped(
-    PROFESSIONAL_SKILLS.map((s) => s.title).join('  •  '),
+    LEADERSHIP_STRENGTHS.join('  •  '),
     marginX,
     contentWidth,
     9,

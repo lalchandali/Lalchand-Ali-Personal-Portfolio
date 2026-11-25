@@ -7,6 +7,7 @@ import {
   Code2,
   Cpu,
   Download,
+  Facebook,
   Github,
   Linkedin,
   Loader2,
@@ -53,8 +54,10 @@ export function HeroSection({
         aria-hidden="true"
         className="absolute inset-0 bg-tech-grid opacity-70 pointer-events-none"
       />
-      <div
+      <motion.div
         aria-hidden="true"
+        animate={{ scale: [1, 1.07, 1], opacity: [0.85, 1, 0.85] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute -top-32 right-0 w-[560px] h-[560px] rounded-full bg-[radial-gradient(circle,rgba(118,87,246,0.14)_0%,rgba(0,194,217,0.06)_45%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(118,87,246,0.22)_0%,rgba(0,194,217,0.09)_45%,transparent_72%)] pointer-events-none"
       />
 
@@ -148,17 +151,24 @@ export function HeroSection({
               }}
               className="flex flex-wrap items-center gap-3 pt-2"
             >
-              <button
+              <motion.button
                 type="button"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={onExploreWork}
-                className="inline-flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-xl bg-gradient-to-r from-[#6243E8] to-[#7657F6] hover:from-[#5234D6] hover:to-[#00A8BD] text-white text-sm font-semibold shadow-lg shadow-[#7657F6]/20 whitespace-nowrap shrink-0 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7657F6] cursor-pointer"
+                className="group inline-flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-xl bg-gradient-to-r from-[#6243E8] to-[#7657F6] hover:from-[#5234D6] hover:to-[#00A8BD] text-white text-sm font-semibold shadow-lg shadow-[#7657F6]/20 whitespace-nowrap shrink-0 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7657F6] cursor-pointer"
               >
                 <span>Explore My Work</span>
-                <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </button>
+                <ArrowRight
+                  className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </motion.button>
 
-              <button
+              <motion.button
                 type="button"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={onDownloadCv}
                 disabled={isDownloadingCv}
                 className="inline-flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-xl border border-slate-300 dark:border-[#263247] bg-white dark:bg-[#141F30] hover:border-[#7657F6] dark:hover:border-[#00C2D9] text-[#0F172A] dark:text-[#F8FAFC] text-sm font-semibold whitespace-nowrap shrink-0 transition-colors disabled:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7657F6] cursor-pointer"
@@ -171,15 +181,17 @@ export function HeroSection({
                 <span>
                   {isDownloadingCv ? 'Generating PDF...' : 'Download My CV'}
                 </span>
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
                 type="button"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={onConnect}
                 className="inline-flex items-center gap-2 px-4 py-3 min-h-[44px] rounded-xl text-sm font-semibold text-[#6243E8] dark:text-[#00C2D9] hover:bg-[#7657F6]/8 dark:hover:bg-[#00C2D9]/10 whitespace-nowrap shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00C2D9] cursor-pointer"
               >
                 <span>Let&apos;s Connect</span>
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Social Links & Location Meta */}
@@ -214,6 +226,16 @@ export function HeroSection({
               </a>
 
               <a
+                href={PROFILE.socials[2].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-[#6243E8] dark:hover:text-[#F8FAFC] transition-colors whitespace-nowrap"
+              >
+                <Facebook className="w-4 h-4" aria-hidden="true" />
+                <span>Facebook</span>
+              </a>
+
+              <a
                 href={`mailto:${PROFILE.email}`}
                 className="inline-flex items-center gap-1.5 hover:text-[#6243E8] dark:hover:text-[#F8FAFC] transition-colors whitespace-nowrap"
               >
@@ -241,8 +263,10 @@ export function HeroSection({
           >
             <div className="relative w-full max-w-[400px]">
               {/* Soft Ambient Orb */}
-              <div
+              <motion.div
                 aria-hidden="true"
+                animate={{ scale: [1, 1.05, 1], opacity: [0.75, 1, 0.75] }}
+                transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-[#7657F6]/25 via-[#00C2D9]/15 to-[#A3F7C5]/10 blur-2xl pointer-events-none"
               />
 

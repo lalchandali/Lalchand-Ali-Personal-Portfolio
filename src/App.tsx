@@ -9,7 +9,6 @@ import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
 import { Navbar } from './components/Navbar';
 import { PrintableResume } from './components/PrintableResume';
-import { ProfessionalSkillsSection } from './components/ProfessionalSkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { SkillsSection } from './components/SkillsSection';
@@ -18,12 +17,11 @@ import { downloadResumePdf } from './utils/generateResumePdf';
 
 const MARQUEE_ITEMS = [
   '7+ Years at Softzino Technologies',
-  'Python · PHP · Laravel · FastAPI · React.js',
-  'IT Service Management (ITSM)',
+  'Python · FastAPI · PHP · Laravel · React.js',
+  'IT Service Management (ITSM) & Infrastructure',
   'AI & Workflow Automation',
-  'Business & Logistics Operations',
+  'Full-Stack Architecture & Root-Cause Analysis',
   'Uttara University CSE',
-  'NSDA Level 3 & 4 Certified',
 ];
 
 export default function App() {
@@ -120,8 +118,6 @@ export default function App() {
               <EducationSection />
 
               <CertificationsSection />
-
-              <ProfessionalSkillsSection />
 
               <ContactSection />
             </div>

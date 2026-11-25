@@ -1,12 +1,5 @@
 import { motion } from 'motion/react';
-import {
-  Award,
-  Bot,
-  CheckCircle2,
-  ClipboardList,
-  Code2,
-  Server,
-} from 'lucide-react';
+import { Bot, CheckCircle2, Code2, Server } from 'lucide-react';
 import { SERVICES } from '../data/portfolioData';
 import {
   RevealBlock,
@@ -15,7 +8,7 @@ import {
   VIEWPORT_CONFIG,
 } from './MotionReveal';
 
-const SERVICE_ICONS = [Code2, Server, Bot, ClipboardList, Award];
+const SERVICE_ICONS = [Code2, Server, Bot];
 
 export function ServicesSection() {
   return (
@@ -43,7 +36,7 @@ export function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT_CONFIG}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {SERVICES.map((service, idx) => {
             const Icon = SERVICE_ICONS[idx % SERVICE_ICONS.length];
@@ -51,9 +44,7 @@ export function ServicesSection() {
               <motion.div
                 key={service.id}
                 variants={staggerItemVariants}
-                className={`rounded-2xl border border-slate-200 dark:border-[#263247] bg-slate-50/70 dark:bg-[#141F30] p-6 flex flex-col justify-between gap-5 hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200 ${
-                  idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-slate-50/70 dark:bg-[#141F30] p-6 flex flex-col justify-between gap-5 hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200"
               >
                 <div className="space-y-4">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#7657F6]/15 to-[#00C2D9]/15 border border-[#7657F6]/25 dark:border-[#00C2D9]/25 flex items-center justify-center text-[#6243E8] dark:text-[#00C2D9]">

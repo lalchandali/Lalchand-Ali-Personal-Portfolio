@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -25,7 +25,7 @@ const FILTERS: { id: ProjectCategory; label: string }[] = [
   { id: 'all', label: 'All Projects' },
   { id: 'web', label: 'Full-Stack Web' },
   { id: 'ai', label: 'AI & Automation' },
-  { id: 'java', label: 'Java & CS' },
+  { id: 'itsm', label: 'Laravel & ITSM' },
 ];
 
 export function ProjectsSection() {
@@ -62,8 +62,8 @@ export function ProjectsSection() {
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
               Architecture-focused engineering work across full-stack FastAPI +
-              React platforms, AI-assisted ITSM automation, and core Java OOP
-              systems.
+              React platforms, AI-assisted ITSM automation, and enterprise
+              Laravel portals.
             </p>
           </div>
 
@@ -102,14 +102,18 @@ export function ProjectsSection() {
         </RevealBlock>
 
         {/* Featured Showcase Card — AgroMitra */}
-        {showFeatured && (
-          <motion.article
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={VIEWPORT_CONFIG}
-            transition={{ duration: 0.55, delay: 0.05, ease: EXECUTIVE_EASE }}
-            className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden shadow-sm hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 transition-colors"
-          >
+        <AnimatePresence mode="popLayout">
+          {showFeatured && (
+            <motion.article
+              key={featuredProject.id}
+              layout="position"
+              initial={{ opacity: 0, y: 28, scale: 0.99 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              viewport={VIEWPORT_CONFIG}
+              transition={{ duration: 0.52, ease: EXECUTIVE_EASE }}
+              className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden shadow-sm hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 transition-colors"
+            >
             <div className="grid lg:grid-cols-12 items-stretch">
               {/* Preview Image */}
               <div className="lg:col-span-5 relative bg-slate-100 dark:bg-[#101827] min-h-[260px] lg:min-h-full overflow-hidden">
@@ -212,14 +216,16 @@ export function ProjectsSection() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
-                    <button
+                    <motion.button
                       type="button"
+                      whileHover={{ y: -1.5 }}
+                      whileTap={{ scale: 0.97 }}
                       onClick={() => setSelectedProject(featuredProject)}
                       className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[40px] rounded-xl bg-[#6243E8] dark:bg-[#7657F6] hover:bg-[#5234D6] dark:hover:bg-[#6545EB] text-white text-sm font-medium whitespace-nowrap shrink-0 transition-colors cursor-pointer"
                     >
                       <span>Inspect Architecture &amp; Code</span>
                       <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-                    </button>
+                    </motion.button>
 
                     {featuredProject.repoUrl && (
                       <a
@@ -229,7 +235,7 @@ export function ProjectsSection() {
                         className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[40px] rounded-xl border border-slate-300 dark:border-[#263247] bg-white dark:bg-[#101827] hover:border-[#7657F6] dark:hover:border-[#00C2D9] text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC] whitespace-nowrap shrink-0 transition-colors"
                       >
                         <FolderGit2 className="w-4 h-4" aria-hidden="true" />
-                        <span>GitHub Profile</span>
+                        <span>View Repository</span>
                         <ExternalLink
                           className="w-3.5 h-3.5 opacity-70"
                           aria-hidden="true"
@@ -237,7 +243,22 @@ export function ProjectsSection() {
                       </a>
                     )}
 
-                    <span className="text-xs text-slate-500 dark:text-[#94A3B8]">
+                    {featuredProject.liveUrl && (
+                      <a
+                        href={featuredProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[40px] rounded-xl border border-slate-300 dark:border-[#263247] bg-white dark:bg-[#101827] hover:border-[#7657F6] dark:hover:border-[#00C2D9] text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC] whitespace-nowrap shrink-0 transition-colors"
+                      >
+                        <span>Live Demo</span>
+                        <ExternalLink
+                          className="w-3.5 h-3.5 opacity-70"
+                          aria-hidden="true"
+                        />
+                      </a>
+                    )}
+
+                    <span className="text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
                       {featuredProject.repoStatusNote}
                     </span>
                   </div>
@@ -245,24 +266,31 @@ export function ProjectsSection() {
               </div>
             </div>
           </motion.article>
-        )}
+          )}
+        </AnimatePresence>
 
         {/* Secondary Engineering Projects */}
         {filteredSecondary.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredSecondary.map((project, idx) => (
-              <motion.article
-                key={project.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={VIEWPORT_CONFIG}
-                transition={{
-                  duration: 0.5,
-                  delay: idx * 0.08,
-                  ease: EXECUTIVE_EASE,
-                }}
-                className="group rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden flex flex-col justify-between hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200 shadow-sm"
-              >
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredSecondary.map((project, idx) => (
+                <motion.article
+                  key={project.id}
+                  layout="position"
+                  initial={{ opacity: 0, y: 26, scale: 0.98 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96, y: 10 }}
+                  viewport={VIEWPORT_CONFIG}
+                  transition={{
+                    duration: 0.5,
+                    delay: idx * 0.08,
+                    ease: EXECUTIVE_EASE,
+                  }}
+                  className="group rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] overflow-hidden flex flex-col justify-between hover:border-[#7657F6]/60 dark:hover:border-[#00C2D9]/60 hover:-translate-y-1 transition-all duration-200 shadow-sm"
+                >
                 <div>
                   <div className="aspect-[16/9] w-full overflow-hidden bg-slate-100 dark:bg-[#101827] border-b border-slate-200 dark:border-[#263247]">
                     <SafeImage
@@ -313,22 +341,27 @@ export function ProjectsSection() {
                       <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                     </button>
 
-                    {project.repoUrl && (
+                    {project.repoUrl ? (
                       <a
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-mono text-slate-500 dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] inline-flex items-center gap-1"
                       >
-                        <span>GitHub</span>
+                        <span>Repository</span>
                         <ExternalLink className="w-3 h-3" aria-hidden="true" />
                       </a>
+                    ) : (
+                      <span className="text-[11px] font-mono text-slate-500 dark:text-[#94A3B8]">
+                        Architecture Case Study
+                      </span>
                     )}
                   </div>
                 </div>
               </motion.article>
-            ))}
-          </div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         )}
       </div>
 

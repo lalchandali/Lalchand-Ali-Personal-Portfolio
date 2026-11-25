@@ -8,7 +8,6 @@ import {
 } from 'lucide-react';
 import { ABOUT_HIGHLIGHTS, PROFILE } from '../data/portfolioData';
 import {
-  EXECUTIVE_EASE,
   staggerGridVariants,
   staggerItemVariants,
   VIEWPORT_CONFIG,
@@ -26,22 +25,30 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Executive Summary Narrative */}
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={staggerGridVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={VIEWPORT_CONFIG}
-            transition={{ duration: 0.55, ease: EXECUTIVE_EASE }}
             className="lg:col-span-5 space-y-5"
           >
-            <p className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]">
+            <motion.p
+              variants={staggerItemVariants}
+              className="text-xs font-mono uppercase tracking-wider text-[#6243E8] dark:text-[#00C2D9]"
+            >
               About Me
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance">
+            </motion.p>
+            <motion.h2
+              variants={staggerItemVariants}
+              className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC] text-balance"
+            >
               Engineering Solutions. Empowering Operations.
-            </h2>
+            </motion.h2>
 
             <div className="space-y-4 text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] leading-relaxed">
               {PROFILE.summaryParagraphs.map((para) => (
-                <p key={para}>{para}</p>
+                <motion.p key={para} variants={staggerItemVariants}>
+                  {para}
+                </motion.p>
               ))}
             </div>
           </motion.div>

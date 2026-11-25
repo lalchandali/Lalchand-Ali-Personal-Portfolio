@@ -4,6 +4,8 @@ import { EDUCATION } from '../data/portfolioData';
 import {
   EXECUTIVE_EASE,
   RevealBlock,
+  staggerGridVariants,
+  staggerItemVariants,
   VIEWPORT_CONFIG,
 } from './MotionReveal';
 
@@ -24,13 +26,17 @@ export function EducationSection() {
         </RevealBlock>
 
         <div className="grid grid-cols-1 gap-6">
-          {EDUCATION.map((edu) => (
+          {EDUCATION.map((edu, idx) => (
             <motion.article
               key={edu.id}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT_CONFIG}
-              transition={{ duration: 0.55, delay: 0.05, ease: EXECUTIVE_EASE }}
+              transition={{
+                duration: 0.55,
+                delay: idx * 0.08,
+                ease: EXECUTIVE_EASE,
+              }}
               className="rounded-2xl border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-sm"
             >
               <div className="flex items-start gap-5">
@@ -58,21 +64,37 @@ export function EducationSection() {
                     {edu.institution}
                   </p>
 
-                  <ul className="pt-2 space-y-1.5 text-sm text-slate-600 dark:text-[#94A3B8]">
+                  <motion.ul
+                    variants={staggerGridVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={VIEWPORT_CONFIG}
+                    className="pt-2 space-y-1.5 text-sm text-slate-600 dark:text-[#94A3B8]"
+                  >
                     {edu.highlights.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
+                      <motion.li
+                        key={item}
+                        variants={staggerItemVariants}
+                        className="flex items-start gap-2"
+                      >
                         <CheckCircle2
                           className="w-4 h-4 mt-0.5 text-[#0284C7] dark:text-[#00C2D9] shrink-0"
                           aria-hidden="true"
                         />
                         <span>{item}</span>
-                      </li>
+                      </motion.li>
                     ))}
-                  </ul>
+                  </motion.ul>
                 </div>
               </div>
 
-              <div className="lg:text-right rounded-xl border border-slate-200 dark:border-[#263247] bg-slate-50 dark:bg-[#101827] px-5 py-4 shrink-0">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={VIEWPORT_CONFIG}
+                transition={{ duration: 0.45, delay: 0.14, ease: EXECUTIVE_EASE }}
+                className="lg:text-right rounded-xl border border-slate-200 dark:border-[#263247] bg-slate-50 dark:bg-[#101827] px-5 py-4 shrink-0"
+              >
                 <div className="flex items-center lg:justify-end gap-2 text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
                   <Award
                     className="w-4 h-4 text-[#7657F6] dark:text-[#A3F7C5]"
@@ -83,7 +105,7 @@ export function EducationSection() {
                 <p className="font-display text-2xl font-bold tabular-nums text-[#0F172A] dark:text-[#F8FAFC] mt-1">
                   CGPA {edu.cgpa}
                 </p>
-              </div>
+              </motion.div>
             </motion.article>
           ))}
         </div>

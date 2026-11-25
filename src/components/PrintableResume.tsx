@@ -3,7 +3,7 @@ import {
   EDUCATION,
   EXPERIENCE,
   HERO_IMAGE,
-  PROFESSIONAL_SKILLS,
+  LEADERSHIP_STRENGTHS,
   PROFILE,
   PROJECTS,
   SKILL_CATEGORIES,
@@ -28,7 +28,7 @@ export function PrintableResume() {
             {PROFILE.location} · Phone: {PROFILE.phone}
           </p>
           <p className="text-xs text-slate-700">
-            Email: {PROFILE.email} / {PROFILE.secondaryEmail}
+            Email: {PROFILE.email}
           </p>
           <p className="text-xs text-slate-700">
             {PROFILE.socials.map((s) => `${s.label}: ${s.handle}`).join(' · ')}
@@ -80,7 +80,7 @@ export function PrintableResume() {
               </p>
               <span className="text-[11px] font-mono text-slate-600 shrink-0">
                 {exp.period} ·{' '}
-                {exp.isConcurrent ? 'Concurrent Role' : exp.location}
+                {exp.isConcurrent ? 'Part-Time Advisory' : exp.location}
               </span>
             </div>
             {exp.progressionSteps && (
@@ -131,27 +131,47 @@ export function PrintableResume() {
           ))}
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <h2 className="text-xs font-bold uppercase tracking-wider text-[#7657F6] border-b border-slate-200 pb-1">
             Training &amp; Certifications
           </h2>
-          <ul className="list-disc pl-4 space-y-0.5 text-xs text-slate-800">
-            {CERTIFICATIONS.map((cert) => (
-              <li key={cert.id}>
-                {cert.title} — {cert.issuer} ({cert.credentialMeta})
-              </li>
-            ))}
-          </ul>
+          {[
+            {
+              label: 'National Skills (NSDA)',
+              items: CERTIFICATIONS.filter((c) => c.track === 'nsda'),
+            },
+            {
+              label: 'Networking & Infrastructure',
+              items: CERTIFICATIONS.filter((c) => c.track === 'networking'),
+            },
+            {
+              label: 'Online Training & Sessions',
+              items: CERTIFICATIONS.filter((c) => c.track === 'training'),
+            },
+          ].map((group) => (
+            <div key={group.label} className="space-y-0.5">
+              <p className="text-[11px] font-bold text-black">{group.label}</p>
+              <ul className="list-disc pl-4 space-y-0.5 text-[11px] text-slate-800">
+                {group.items.map((cert) => (
+                  <li key={cert.id}>
+                    {cert.title} — {cert.issuerShort} ({cert.credentialMeta}
+                    {cert.credentialNumber ? ` · ${cert.credentialNumber}` : ''}
+                    )
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Professional Skills */}
+      {/* Leadership & Execution */}
       <div className="mt-4 space-y-1">
         <h2 className="text-xs font-bold uppercase tracking-wider text-[#7657F6] border-b border-slate-200 pb-1">
-          Professional &amp; Leadership Skills
+          Leadership &amp; Execution
         </h2>
         <p className="text-xs text-slate-800">
-          {PROFESSIONAL_SKILLS.map((s) => s.title).join(' · ')}
+          {LEADERSHIP_STRENGTHS.join(' · ')}
         </p>
       </div>
     </section>

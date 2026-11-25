@@ -28,19 +28,19 @@ export const staggerGridVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.09,
       delayChildren: 0.06,
     },
   },
 };
 
 export const staggerItemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 26 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.48,
+      duration: 0.52,
       ease: EXECUTIVE_EASE,
     },
   },

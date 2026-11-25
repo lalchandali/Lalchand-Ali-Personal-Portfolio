@@ -167,23 +167,40 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </pre>
               </div>
 
-              {/* Honest Repo / Demo Footer */}
+              {/* Honest Repo / Case Study Footer */}
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-200 dark:border-[#263247]">
-                <p className="text-xs text-slate-500 dark:text-[#94A3B8]">
+                <p className="text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
                   {project.demoStatusNote}
                 </p>
-                {project.repoUrl && (
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#6243E8] dark:bg-[#7657F6] text-white text-xs font-semibold hover:opacity-95"
-                  >
-                    <FolderGit2 className="w-4 h-4" aria-hidden="true" />
-                    <span>Visit GitHub Profile</span>
-                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                  </a>
-                )}
+                <div className="flex items-center gap-2.5">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-300 dark:border-[#263247] text-xs font-semibold hover:border-[#7657F6] dark:hover:border-[#00C2D9]"
+                    >
+                      <span>Live Demo</span>
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    </a>
+                  )}
+                  {project.repoUrl ? (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#6243E8] dark:bg-[#7657F6] text-white text-xs font-semibold hover:opacity-95"
+                    >
+                      <FolderGit2 className="w-4 h-4" aria-hidden="true" />
+                      <span>View Repository</span>
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <span className="text-xs text-slate-500 dark:text-[#94A3B8]">
+                      {project.repoStatusNote}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>

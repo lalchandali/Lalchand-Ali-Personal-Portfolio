@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'web' | 'ai' | 'java';
+export type ProjectCategory = 'all' | 'web' | 'ai' | 'itsm';
 
 export interface ProjectItem {
   id: string;
@@ -65,14 +65,26 @@ export interface EducationItem {
   highlights: string[];
 }
 
+export type CertificationTrack = 'all' | 'nsda' | 'networking' | 'training';
+
 export interface CertificationItem {
   id: string;
   title: string;
   issuer: string;
+  issuerShort: string;
+  track: Exclude<CertificationTrack, 'all'>;
   credentialMeta: string;
   category: string;
   summary: string;
+  competencies: string[];
+  featured?: boolean;
   certificateUrl?: string;
+  certificateType?: 'image' | 'pdf';
+  previewImages?: { label: string; src: string }[];
+  credentialNumber?: string;
+  registrationNo?: string;
+  issuedDate?: string;
+  validUntil?: string;
 }
 
 export interface ProfessionalSkillItem {
@@ -97,7 +109,6 @@ export const PROFILE = {
   location: 'Dhaka, Bangladesh',
   phone: '+880 1717-080704',
   email: 'lalchandalibd@gmail.com',
-  secondaryEmail: 'lal.chand@uttarauniversity.edu.bd',
   availability: 'Open to Software Engineering, ITSM & AI Automation Collaborations',
   experienceYearsLabel: '7+ Years',
   socials: [
@@ -110,6 +121,11 @@ export const PROFILE = {
       label: 'GitHub',
       href: 'https://github.com/lalchandali',
       handle: 'github.com/lalchandali',
+    },
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/lalchandali.60',
+      handle: 'facebook.com/lalchandali.60',
     },
   ],
 };
@@ -129,49 +145,48 @@ export const ROTATING_KEYWORDS = [
   'Full-Stack Software Engineering',
   'IT Service Management (ITSM)',
   'AI & Workflow Automation',
-  'Business & Logistics Operations',
-  'Competency-Based Assessment',
+  'Laravel & FastAPI Architecture',
 ];
 
 export const ABOUT_HIGHLIGHTS = [
   {
     id: 'hl-exp',
-    title: '7+ Years Experience',
-    subtitle: 'Progressive Career Growth',
+    title: '7+ Years Engineering Tenure',
+    subtitle: 'Softzino Technologies (2019–Present)',
     detail:
-      'Advanced from Development Assistant through Senior Executive (IT) and Associate Software Engineer to Software Engineer at Softzino Technologies since June 2019.',
+      'Progressed from Development Assistant through Senior Executive (IT) and Associate Software Engineer to Software Engineer delivering enterprise systems.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-eng',
     title: 'Full-Stack Engineering',
-    subtitle: 'Python · PHP · Laravel · FastAPI · React.js',
+    subtitle: 'Python · FastAPI · PHP · Laravel · React.js',
     detail:
-      'Architects maintainable backend APIs, authentication flows, and responsive React.js web applications aligned with real business requirements.',
+      'Architects maintainable backend APIs, role-based portals, authentication flows, and responsive React.js web interfaces.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-itsm',
     title: 'IT Service Management',
-    subtitle: 'Enterprise Infrastructure & Root-Cause Analysis',
+    subtitle: 'Infrastructure Reliability & Root-Cause Analysis',
     detail:
-      'Hands-on system administration, server maintenance, structured debugging, and SLA-oriented technical support.',
+      'Hands-on server administration, incident governance, structured debugging, and SLA-oriented technical support.',
     span: 'md:col-span-2',
   },
   {
     id: 'hl-ai',
     title: 'AI-Driven Workflows',
-    subtitle: 'Prompt Engineering & LLM Integration',
+    subtitle: 'Prompt Engineering & Automation Scripts',
     detail:
-      'Applies prompt engineering and AI tools inside engineering and operations pipelines to accelerate problem diagnosis and delivery.',
+      'Applies prompt engineering and Python automation inside developer and ITSM triage pipelines to accelerate diagnosis and delivery.',
     span: 'md:col-span-3',
   },
   {
     id: 'hl-ops',
-    title: 'Business & Operations Leadership',
-    subtitle: 'Concurrent IT, Logistics & Customer Service Roles',
+    title: 'Operational & Assessment Breadth',
+    subtitle: 'Supporting Background in Operations & NSDA CBA',
     detail:
-      'Bridges software delivery with real-world execution across logistics coordination, technical consulting, and customer satisfaction.',
+      'Complements core software engineering with hands-on IT advisory, fulfillment coordination, and formal NSDA competency evaluation standards.',
     span: 'md:col-span-3',
   },
 ];
@@ -180,7 +195,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     id: 'exp-softzino',
     period: 'June 2019 – Present',
-    location: 'Dhaka, Bangladesh',
+    location: 'Dhaka, Bangladesh (Full-Time)',
     role: 'Software Engineer',
     company: 'SOFTZINO TECHNOLOGIES',
     isConcurrent: false,
@@ -191,13 +206,12 @@ export const EXPERIENCE: ExperienceItem[] = [
       'Software Engineer',
     ],
     summary:
-      '7+ years of progressive full-stack engineering, AI workflow optimization, and enterprise IT service management.',
+      'Primary full-time role leading full-stack web engineering, AI workflow automation, and enterprise IT service management.',
     highlights: [
-      'Develop and maintain web applications utilizing Python, PHP, and modern web application frameworks (Laravel).',
-      'Incorporate AI-powered tools and prompt engineering methodologies into internal developer workflows to optimize productivity.',
-      'Deliver IT service management (ITSM), system administration, server maintenance, and technical infrastructure support.',
-      'Perform technical troubleshooting, debugging, and root-cause analysis for enterprise systems.',
-      'Collaborate with cross-functional teams to translate business and functional requirements into scalable technical solutions.',
+      'Architect, develop, and maintain production web applications and REST APIs using Python, FastAPI, PHP, and Laravel.',
+      'Embed prompt engineering and AI-assisted diagnostic tooling into internal developer workflows to accelerate triage and documentation.',
+      'Manage IT service delivery (ITSM), Linux/server administration, preventive maintenance, and enterprise infrastructure support.',
+      'Lead technical debugging and root-cause analysis across production incidents, translating business specs into maintainable releases.',
     ],
   },
   {
@@ -208,12 +222,11 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: 'BARNOi LIFESTYLE',
     isConcurrent: true,
     summary:
-      'Concurrent operational leadership overseeing logistics fulfillment, order tracking, and customer service excellence.',
+      'Part-time shared-group operational mandate overseeing fulfillment workflows, order tracking, and customer escalation resolution.',
     highlights: [
-      'Oversee daily logistics operations, including delivery coordination, order tracking, and inventory movement.',
-      'Manage customer inquiries, resolve service issues, and maintain high customer satisfaction standards.',
-      'Coordinate logistics and customer service activities to ensure smooth business operations.',
-      'Collaborate with relevant teams to improve operational efficiency and service delivery.',
+      'Direct daily order fulfillment, delivery partner coordination, and inventory movement across online retail operations.',
+      'Handle escalated customer inquiries and enforce service quality standards across order lifecycles.',
+      'Streamline logistics handoffs and fulfillment tracking alongside core engineering commitments.',
     ],
   },
   {
@@ -224,12 +237,11 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: 'BARNOi HOLDINGS LTD.',
     isConcurrent: true,
     summary:
-      'Concurrent IT leadership coordinating technical requirements, service delivery, and technology-driven workflow improvements.',
+      'Part-time group IT advisory mandate aligning sister-entity technical requirements, vendor systems, and internal workflows.',
     highlights: [
-      'Coordinate IT-related operations and support ongoing business initiatives.',
-      'Manage technical requirements and assist with IT service delivery.',
-      'Communicate with stakeholders to facilitate business and operational activities.',
-      'Support technology-driven solutions and improve operational workflows.',
+      'Advise on internal IT operations, workstation readiness, and technical service continuity across group initiatives.',
+      'Translate operational bottlenecks into structured software and automation specifications for business stakeholders.',
+      'Coordinate technical setup and IT support workflows on a scheduled part-time advisory basis.',
     ],
   },
 ];
@@ -376,9 +388,8 @@ export const PROJECTS: ProjectItem[] = [
     ),
     imageAlt:
       'AgroMitra Smart Agricultural Management Platform interface displaying soil macronutrient analysis and crop planning modules',
-    repoUrl: 'https://github.com/lalchandali',
-    repoStatusNote: 'GitHub Profile (Source Repository Available Upon Request)',
-    demoStatusNote: 'Architecture Preview & Code Walkthrough Available in Modal',
+    repoStatusNote: 'Architecture Case Study · Source Available Upon Request',
+    demoStatusNote: 'Architecture Case Study & Code Walkthrough',
     codeSnippet: {
       filename: 'backend/app/routers/recommendations.py',
       language: 'python',
@@ -430,9 +441,8 @@ async def evaluate_crop_plan(
     ),
     imageAlt:
       'Python automation and AI workflow terminal visualization in an engineering workspace',
-    repoUrl: 'https://github.com/lalchandali',
-    repoStatusNote: 'Internal Enterprise Workflow · GitHub Profile Linked',
-    demoStatusNote: 'Workflow Pattern Preview Available in Modal',
+    repoStatusNote: 'Proprietary Enterprise Workflow · Architecture Case Study',
+    demoStatusNote: 'Architecture Case Study & Triage Pattern',
     codeSnippet: {
       filename: 'automation/itsm_triage.py',
       language: 'python',
@@ -444,48 +454,48 @@ async def evaluate_crop_plan(
     },
   },
   {
-    id: 'guess-the-number-java',
-    title: 'Guess the Number – Java OOP Application',
-    subtitle: 'Object-Oriented Game Architecture & Persistent Leaderboard',
-    category: 'java',
-    categoryLabel: 'Java & Core CS',
+    id: 'laravel-itsm-portal',
+    title: 'Enterprise Laravel Operations & ITSM Service Portal',
+    subtitle: 'Role-Based Ticketing, Incident Escalation & Server Health Workflows',
+    category: 'itsm',
+    categoryLabel: 'Laravel & ITSM',
     year: '2024',
-    role: 'Sole Developer',
+    role: 'Software Engineer · Softzino Technologies',
     summary:
-      'Interactive Java application built on clean Object-Oriented Programming principles featuring selectable difficulty tiers, attempt tracking, file-based persistent score storage, and a ranked leaderboard.',
+      'Architected and maintained multi-role PHP & Laravel enterprise portals integrating IT service management (ITSM) ticket lifecycles, automated SLA escalation rules, and infrastructure health diagnostics.',
     keyFeatures: [
-      'Selectable difficulty levels (Easy, Medium, Hard)',
-      'Attempt tracking and defensive input validation',
-      'Persistent File I/O score storage',
-      'Sorted leaderboard ranking top runs',
+      'Role-based access control & multi-tenant permissions',
+      'Structured ITSM incident lifecycle & SLA escalation tracking',
+      'Automated server health checks & root-cause audit logs',
+      'RESTful API integration with internal operations tooling',
     ],
     contributions: [
-      'Modeled GameSession, Difficulty, and ScoreBoard OOP classes',
-      'Implemented persistent leaderboard File I/O serialization',
-      'Added boundary checking and clean console UX',
+      'Built modular Laravel services, policies, and REST API endpoints',
+      'Designed normalized relational schemas for audit & incident trails',
+      'Aligned system troubleshooting logs with ITSM root-cause workflows',
     ],
-    stack: ['Java', 'OOP', 'File I/O', 'Collections'],
+    stack: ['PHP', 'Laravel', 'REST APIs', 'MySQL', 'ITSM', 'Linux Server'],
     image: resolveAssetPath(
-      'src/assets/images/project_java_game_oop_1794910154146.jpg'
+      'src/assets/images/project_distributed_telemetry_1794909245929.jpg'
     ),
     imageAlt:
-      'Java OOP application showing difficulty modes and leaderboard persistence output',
-    repoUrl: 'https://github.com/lalchandali',
-    repoStatusNote: 'GitHub Profile',
-    demoStatusNote: 'Architecture & Java Source Snippet in Modal',
+      'Enterprise service monitoring and ITSM operational health dashboard displaying live service telemetry and incident status',
+    repoStatusNote: 'Enterprise Architecture Case Study',
+    demoStatusNote: 'Enterprise Architecture & Laravel Service Pattern',
     codeSnippet: {
-      filename: 'src/com/lalchand/game/ScoreBoard.java',
-      language: 'java',
-      code: `public class ScoreBoard {
-    private final Path storagePath;
+      filename: 'app/Services/IncidentEscalationService.php',
+      language: 'php',
+      code: `final class IncidentEscalationService
+{
+    public function evaluateSlaBreach(ServiceTicket $ticket): EscalationDecision
+    {
+        $elapsedMinutes = $ticket->opened_at->diffInMinutes(now());
+        $shouldEscalate = !$ticket->isResolved() && $elapsedMinutes >= $ticket->sla_threshold_minutes;
 
-    public void recordResult(String player, int attempts, Difficulty difficulty) throws IOException {
-        String row = String.format("%s,%d,%s%n", player, attempts, difficulty.name());
-        Files.writeString(
-            storagePath,
-            row,
-            StandardOpenOption.CREATE,
-            StandardOpenOption.APPEND
+        return new EscalationDecision(
+            escalate: $shouldEscalate,
+            priority: $shouldEscalate ? TicketPriority::CRITICAL : $ticket->priority,
+            assignedTeam: $shouldEscalate ? 'L2-Infrastructure' : $ticket->assigned_team,
         );
     }
 }`,
@@ -496,57 +506,35 @@ async def evaluate_crop_plan(
 export const SERVICES: ServiceItem[] = [
   {
     id: 'srv-swe',
-    title: 'Software Engineering',
+    title: 'Full-Stack Software Engineering',
     summary:
-      'End-to-end engineering of reliable full-stack web applications and clean API contracts.',
+      'End-to-end architecture and delivery of scalable web portals, backend services, and clean REST APIs.',
     capabilities: [
-      'Full-stack web applications',
-      'REST APIs & backend architecture',
-      'FastAPI, Laravel & React.js delivery',
+      'Python (FastAPI), PHP (Laravel) & React.js systems',
+      'Authentication, RBAC & modular API architecture',
+      'Database design, performance tuning & deployment',
     ],
   },
   {
     id: 'srv-itsm',
-    title: 'IT Service Management',
+    title: 'IT Service Management & Infrastructure',
     summary:
-      'Dependable IT infrastructure governance, preventive server maintenance, and structured incident resolution.',
+      'Dependable infrastructure administration, preventive server maintenance, and structured root-cause resolution.',
     capabilities: [
-      'System administration & server maintenance',
+      'Enterprise system administration & uptime governance',
       'Technical troubleshooting & root-cause analysis',
-      'Enterprise IT support & service continuity',
+      'Incident workflows, SLAs & operational continuity',
     ],
   },
   {
     id: 'srv-ai',
-    title: 'AI & Automation',
+    title: 'AI Workflows & Operations Automation',
     summary:
-      'Embedding practical AI tools and automation pipelines into engineering and business workflows.',
+      'Applying prompt engineering, LLM tools, and automation scripts to accelerate engineering and business execution.',
     capabilities: [
-      'Structured prompt engineering',
-      'AI workflow integration',
-      'Developer & operational productivity automation',
-    ],
-  },
-  {
-    id: 'srv-ops',
-    title: 'Business Operations',
-    summary:
-      'Bridging technical systems with day-to-day logistics execution and customer-facing service standards.',
-    capabilities: [
-      'Logistics & delivery coordination',
-      'Customer service optimization',
-      'Cross-team workflow management',
-    ],
-  },
-  {
-    id: 'srv-cba',
-    title: 'Competency-Based Assessment',
-    summary:
-      'Applying national competency frameworks and objective evaluation methods to verify workplace readiness.',
-    capabilities: [
-      'Competency standards evaluation',
-      'Structured assessment methodology',
-      'CBT&A frameworks & evidence review',
+      'Structured prompt engineering & AI-assisted triage',
+      'Python workflow automation & operational tooling',
+      'Logistics, customer support & process optimization',
     ],
   },
 ];
@@ -569,99 +557,248 @@ export const EDUCATION: EducationItem[] = [
 
 export const CERTIFICATIONS: CertificationItem[] = [
   {
+    id: 'cert-cba-l4',
+    title: 'Competency-Based Assessment – Level 4',
+    issuer: 'National Skills Development Authority (NSDA)',
+    issuerShort: 'NSDA',
+    track: 'nsda',
+    credentialMeta: 'NSDA Level 4',
+    category: 'Assessment & Training',
+    featured: true,
+    summary:
+      'Certified capability in designing and conducting competency-based skills evaluations under national CBT&A frameworks.',
+    competencies: [
+      'Competency-Based Assessment (CBA) execution',
+      'CBT&A standards & assessment methods',
+      'Practical skills evaluation & evidence review',
+    ],
+  },
+  {
     id: 'cert-ccna',
     title: 'CCNA Training (Cisco Certified Network Associate)',
     issuer: 'CSL Training',
+    issuerShort: 'CSL Training',
+    track: 'networking',
     credentialMeta: '72 Hours Intensive',
     category: 'Networking & Infrastructure',
+    featured: true,
+    credentialNumber: 'CSL-KUR-OFF-CCN-23802',
+    issuedDate: '03 Sep 2023',
+    certificateUrl: resolveAssetPath('assets/aistudio/CCNA_617a9b50.jpeg'),
+    certificateType: 'image',
+    previewImages: [
+      {
+        label: 'Certificate',
+        src: resolveAssetPath('assets/aistudio/CCNA_617a9b50.jpeg'),
+      },
+    ],
     summary:
-      'Hands-on routing, switching, IP addressing, and enterprise network fundamentals.',
+      'Hands-on routing, switching, IP addressing, and enterprise network infrastructure fundamentals.',
+    competencies: [
+      'Routing & switching fundamentals',
+      'IP addressing, subnetting & VLANs',
+      'Network troubleshooting & diagnostics',
+    ],
   },
   {
     id: 'cert-it-l3',
-    title: 'IT Support Service – Level 3',
+    title: 'IT Support Service, Level 3',
     issuer: 'National Skills Development Authority (NSDA)',
-    credentialMeta: 'NSDA Level 3',
+    issuerShort: 'NSDA',
+    track: 'nsda',
+    credentialMeta: 'NSDA Level 3 · BNQF',
     category: 'IT Service & Support',
+    credentialNumber: 'NSC-ICT-ITSS-L3-003108',
+    registrationNo: 'RPL-ICT-ITSS-L3-001863',
+    issuedDate: '19 Apr 2025',
+    validUntil: '18 Apr 2030',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/Certificate_MD_LAL_CHAND_ALI_b4886295.pdf'
+    ),
+    certificateType: 'pdf',
+    previewImages: [
+      {
+        label: 'English',
+        src: resolveAssetPath('assets/aistudio/cert_itss_l3_en.png'),
+      },
+      {
+        label: 'বাংলা',
+        src: resolveAssetPath('assets/aistudio/cert_itss_l3_bn.png'),
+      },
+    ],
     summary:
-      'Nationally recognized certification in workstation maintenance, troubleshooting, and IT user support.',
+      'National Skills Certificate under BNQF covering workstation assembly, OS configuration, networking, and technical troubleshooting.',
+    competencies: [
+      'Install, configure & optimize OS and utility software',
+      'Maintain & troubleshoot PCs and perform PC assembly',
+      'Basic networking, data backup & recovery',
+      'IT support fundamentals & workplace English interaction',
+    ],
   },
   {
     id: 'cert-cs-l3',
     title: 'Professional Customer Services, Level 3',
     issuer: 'National Skills Development Authority (NSDA)',
-    credentialMeta: 'NSDA Level 3',
+    issuerShort: 'NSDA',
+    track: 'nsda',
+    credentialMeta: 'NSDA Level 3 · 220 Hours',
     category: 'Client & Operations',
+    credentialNumber: 'NSC-ICT-PCS-L3-001412',
+    registrationNo: 'REG-ICT-PCS-L3-001366',
+    issuedDate: '05 Jul 2026',
+    validUntil: '04 Jul 2031',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/Certificate_Md_Lal_Chand_Ali__2__b421144c.pdf'
+    ),
+    certificateType: 'pdf',
+    previewImages: [
+      {
+        label: 'English',
+        src: resolveAssetPath('assets/aistudio/cert_pcs_l3_en.png'),
+      },
+      {
+        label: 'বাংলা',
+        src: resolveAssetPath('assets/aistudio/cert_pcs_l3_bn.png'),
+      },
+    ],
     summary:
-      'Structured client communication, issue escalation, and service quality standards.',
+      'National Skills Certificate (220 hours, BNQF) in customer management techniques, software tools, service quality, and IT ethics.',
+    competencies: [
+      'Customer management techniques & service quality compliance',
+      'Software tools in customer service & basic IT skills',
+      'Effective communication, presentations & teamwork',
+      'Workplace OHS & ethical standards in IT environments',
+    ],
   },
   {
     id: 'cert-bo-l3',
-    title: 'Professional Back Office Service – Level 3',
+    title: 'Professional Back-office Service, Level 3',
     issuer: 'National Skills Development Authority (NSDA)',
-    credentialMeta: 'NSDA Level 3',
+    issuerShort: 'NSDA',
+    track: 'nsda',
+    credentialMeta: 'NSDA Level 3 · BNQF',
     category: 'Business Administration',
+    credentialNumber: 'NSC-ICT-PBS-L3-001568',
+    registrationNo: 'RPL-ICT-PBS-L3-001060',
+    issuedDate: '27 Sep 2026',
+    validUntil: '26 Sep 2031',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/Certificate_MD_LAL_CHAND_ALI__1__f468b6f1.pdf'
+    ),
+    certificateType: 'pdf',
+    previewImages: [
+      {
+        label: 'English',
+        src: resolveAssetPath('assets/aistudio/cert_pbs_l3_en.png'),
+      },
+      {
+        label: 'বাংলা',
+        src: resolveAssetPath('assets/aistudio/cert_pbs_l3_bn.png'),
+      },
+    ],
     summary:
-      'Operational documentation, workflow coordination, and back-office execution standards.',
+      'National Skills Certificate under BNQF covering spreadsheet business data management, small team leadership, and back-office operations.',
+    competencies: [
+      'Spreadsheets for business data & Bangla/English typing',
+      'Lead small teams & basic business development activities',
+      'Basic digital marketing, IT skills & clipping path',
+      'Customer soft skills, OHS & IT workplace ethics',
+    ],
   },
   {
-    id: 'cert-cba-l4',
-    title: 'Competency-Based Assessment – Level 4',
-    issuer: 'National Skills Development Authority (NSDA)',
-    credentialMeta: 'NSDA Level 4',
-    category: 'Assessment & Training',
+    id: 'cert-linux-simplilearn',
+    title: 'Basic Introduction to Linux Course',
+    issuer: 'Simplilearn | SkillUP',
+    issuerShort: 'Simplilearn SkillUP',
+    track: 'training',
+    credentialMeta: 'Online Course',
+    category: 'Linux & Systems',
+    credentialNumber: '4760301',
+    issuedDate: '04 Jan 2024',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/4760301_1704365632_ffe90d1f.pdf'
+    ),
+    certificateType: 'pdf',
+    previewImages: [
+      {
+        label: 'Certificate',
+        src: resolveAssetPath('assets/aistudio/cert_simplilearn_linux.png'),
+      },
+    ],
     summary:
-      'Certified capability in designing and conducting competency-based skills evaluations under CBT&A standards.',
+      'Certificate of Completion for successfully finishing the Simplilearn SkillUP online course covering Linux fundamentals and command-line workflows.',
+    competencies: [
+      'Linux OS architecture & file system navigation',
+      'Essential shell commands & file permissions',
+      'System environment & administration basics',
+    ],
+  },
+  {
+    id: 'cert-nictf-cyber-ai',
+    title: 'Cybersecurity Awareness and AI Governance',
+    issuer: 'Nationalist ICT Forum (NICTF)',
+    issuerShort: 'NICTF',
+    track: 'training',
+    credentialMeta: 'Training Participation',
+    category: 'Cybersecurity & AI',
+    credentialNumber: 'NICTF-CYBER-00245',
+    issuedDate: '13 Nov 2026',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/nictf-certificate-md-lal-chand-ali_page-0001_15674174.jpg'
+    ),
+    certificateType: 'image',
+    previewImages: [
+      {
+        label: 'Certificate',
+        src: resolveAssetPath(
+          'assets/aistudio/nictf-certificate-md-lal-chand-ali_page-0001_15674174.jpg'
+        ),
+      },
+    ],
+    summary:
+      'Certificate of Participation for completing the training program on Cybersecurity Awareness and AI Governance organized by Nationalist ICT Forum (NICTF).',
+    competencies: [
+      'Cybersecurity threat awareness & digital hygiene',
+      'Responsible AI governance & risk mitigation',
+      'ICT security compliance & operational awareness',
+    ],
+  },
+  {
+    id: 'cert-bsrs-research',
+    title: 'Research Fundamentals: From Curiosity to Scientific Discovery',
+    issuer: 'Bangladesh Space Research Society (BSRS)',
+    issuerShort: 'BSRS',
+    track: 'training',
+    credentialMeta: 'Online Webinar',
+    category: 'Research & Methodology',
+    issuedDate: '13 Nov 2026',
+    certificateUrl: resolveAssetPath(
+      'assets/aistudio/Screenshot_2026-11-14_232258_ec5b5fa4.png'
+    ),
+    certificateType: 'image',
+    previewImages: [
+      {
+        label: 'Certificate',
+        src: resolveAssetPath(
+          'assets/aistudio/Screenshot_2026-11-14_232258_ec5b5fa4.png'
+        ),
+      },
+    ],
+    summary:
+      'Certificate of Participation in the online webinar organized by the Department of Research and Development, Bangladesh Space Research Society (BSRS).',
+    competencies: [
+      'Exploring research ideas & scientific inquiry',
+      'Scientific methods & structured evaluation',
+      'Essential research tools & discovery workflows',
+    ],
   },
 ];
 
-export const PROFESSIONAL_SKILLS: ProfessionalSkillItem[] = [
-  {
-    id: 'ps-analytical',
-    title: 'Analytical Thinking & Problem-Solving',
-    description:
-      'Breaking down complex software bugs, infrastructure incidents, and operational bottlenecks into actionable solutions.',
-  },
-  {
-    id: 'ps-comm',
-    title: 'Technical Communication',
-    description:
-      'Translating system architecture, technical trade-offs, and functional specs clearly for engineering and business stakeholders.',
-  },
-  {
-    id: 'ps-collab',
-    title: 'Team Collaboration',
-    description:
-      'Working seamlessly across cross-functional engineering, IT support, and operations teams to deliver reliable outcomes.',
-  },
-  {
-    id: 'ps-lead',
-    title: 'Leadership & Coordination',
-    description:
-      'Coordinating daily execution across concurrent IT management, logistics, and customer service responsibilities.',
-  },
-  {
-    id: 'ps-crm',
-    title: 'Customer Relationship Management',
-    description:
-      'Maintaining high service standards, resolving escalations empathetically, and building lasting client trust.',
-  },
-  {
-    id: 'ps-ops',
-    title: 'Operational Management',
-    description:
-      'Streamlining inventory movement, order tracking, SLA compliance, and day-to-day business continuity.',
-  },
-  {
-    id: 'ps-adapt',
-    title: 'Adaptability & Continuous Learning',
-    description:
-      'Continuously adopting modern frameworks, AI-assisted engineering workflows, and industry certifications.',
-  },
-  {
-    id: 'ps-time',
-    title: 'Time Management',
-    description:
-      'Prioritizing critical deliverables effectively across software development sprints and concurrent operational roles.',
-  },
+export const LEADERSHIP_STRENGTHS: string[] = [
+  'Analytical Root-Cause Solving',
+  'Cross-Functional Team Coordination',
+  'Technical Stakeholder Communication',
+  'SLA & Operational Execution',
+  'Customer Escalation Management',
+  'Continuous Learning & Adaptability',
 ];

@@ -1,5 +1,7 @@
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowUp, Facebook, Github, Linkedin, Mail } from 'lucide-react';
 import { PROFILE } from '../data/portfolioData';
+import { RevealBlock } from './MotionReveal';
 
 const QUICK_LINKS = [
   { id: 'home', label: 'Home' },
@@ -20,7 +22,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[#F8FAFC] dark:bg-[#080B14] border-t border-slate-200 dark:border-[#263247] transition-colors duration-200 no-print">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      <RevealBlock className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Brand Summary */}
           <div className="md:col-span-5 space-y-2.5">
@@ -59,10 +61,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Emails & Socials */}
+          {/* Email & Socials */}
           <div className="md:col-span-3 space-y-3">
             <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8]">
-              Direct Channels
+              Direct Contact
             </h3>
             <div className="space-y-1.5 text-xs text-slate-600 dark:text-[#94A3B8]">
               <a
@@ -72,17 +74,12 @@ export function Footer() {
                 <Mail className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                 <span>{PROFILE.email}</span>
               </a>
-              <a
-                href={`mailto:${PROFILE.secondaryEmail}`}
-                className="flex items-center gap-2 hover:text-[#6243E8] dark:hover:text-[#F8FAFC] transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                <span>{PROFILE.secondaryEmail}</span>
-              </a>
             </div>
 
             <div className="flex items-center gap-3 pt-1">
-              <a
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
                 href={PROFILE.socials[0].href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -90,8 +87,10 @@ export function Footer() {
                 className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
               >
                 <Linkedin className="w-4 h-4" aria-hidden="true" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
                 href={PROFILE.socials[1].href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,7 +98,18 @@ export function Footer() {
                 className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
               >
                 <Github className="w-4 h-4" aria-hidden="true" />
-              </a>
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                href={PROFILE.socials[2].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook profile"
+                className="w-9 h-9 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] flex items-center justify-center text-slate-600 dark:text-[#94A3B8] hover:text-[#6243E8] dark:hover:text-[#00C2D9] transition-colors"
+              >
+                <Facebook className="w-4 h-4" aria-hidden="true" />
+              </motion.a>
             </div>
           </div>
         </div>
@@ -109,16 +119,18 @@ export function Footer() {
             © {year} {PROFILE.name}. All rights reserved.
           </p>
 
-          <button
+          <motion.button
             type="button"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
             onClick={scrollToTop}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-[#263247] bg-white dark:bg-[#141F30] text-slate-700 dark:text-[#F8FAFC] hover:border-[#7657F6] dark:hover:border-[#00C2D9] transition-colors cursor-pointer"
           >
             <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Back to Top</span>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </RevealBlock>
     </footer>
   );
 }

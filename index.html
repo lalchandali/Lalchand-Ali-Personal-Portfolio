@@ -3,21 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MD LAL CHAND ALI | Software Engineer · ITSM · Business Operations · AI &amp; Automation</title>
+    <title>Md Lal Chand Ali – Software Engineer &amp; ITSM Lead</title>
     <meta
       name="description"
-      content="Portfolio and resume of Md Lal Chand Ali — Software Engineer with 7+ years at Softzino Technologies, IT Service Management, Business Operations, and AI-driven automation in Dhaka, Bangladesh."
+      content="Software Engineer with 7+ years at Softzino Technologies, specializing in full-stack web systems, ITSM, business operations, and AI automation."
+    />
+    <meta
+      name="author"
+      content="Md Lal Chand Ali"
+    />
+    <meta name="theme-color" content="#080B14" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link
+      id="canonical-link"
+      rel="canonical"
+      href="https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/"
+    />
+
+    <!-- OpenGraph Social Card -->
+    <meta property="og:site_name" content="Md Lal Chand Ali Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta
+      id="og-url-meta"
+      property="og:url"
+      content="https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/"
     />
     <meta
       property="og:title"
-      content="MD LAL CHAND ALI | Software Engineer · ITSM · Business Operations · AI &amp; Automation"
+      content="Md Lal Chand Ali – Software Engineer &amp; ITSM Lead"
     />
     <meta
       property="og:description"
-      content="A technology professional combining software engineering, IT service management, business operations, and AI-driven automation to deliver practical, scalable, and efficient digital solutions."
+      content="Software Engineer with 7+ years at Softzino Technologies, specializing in full-stack web systems, ITSM, business operations, and AI automation."
     />
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/og-preview.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Md Lal Chand Ali — Software Engineer, ITSM, Business Operations, and AI Automation Portfolio"
+    />
+
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Md Lal Chand Ali – Software Engineer &amp; ITSM Lead"
+    />
+    <meta
+      name="twitter:description"
+      content="Software Engineer with 7+ years at Softzino Technologies, specializing in full-stack web systems, ITSM, business operations, and AI automation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/og-preview.png"
+    />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "MD LAL CHAND ALI",
+        "alternateName": "Md Lal Chand Ali",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer combining full-stack development, IT Service Management (ITSM), business operations, and AI-driven automation.",
+        "url": "https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/",
+        "image": "https://lalchandali.github.io/Lalchand-Ali-Personal-Portfolio/assets/aistudio/my_photo_1_a247e1c4.png",
+        "email": "mailto:lalchandalibd@gmail.com",
+        "telephone": "+8801717080704",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dhaka",
+          "addressCountry": "BD"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Softzino Technologies"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Uttara University"
+        },
+        "knowsAbout": [
+          "Python",
+          "FastAPI",
+          "PHP",
+          "Laravel",
+          "React.js",
+          "IT Service Management",
+          "AI & Workflow Automation",
+          "Competency-Based Assessment"
+        ],
+        "sameAs": [
+          "https://linkedin.com/in/lalchand-ali/",
+          "https://github.com/lalchandali",
+          "https://www.facebook.com/lalchandali.60"
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,6 +123,11 @@
           } else {
             document.documentElement.classList.add('dark');
           }
+          var currentUrl = window.location.origin + window.location.pathname;
+          var canonical = document.getElementById('canonical-link');
+          var ogUrl = document.getElementById('og-url-meta');
+          if (canonical) canonical.setAttribute('href', currentUrl);
+          if (ogUrl) ogUrl.setAttribute('content', currentUrl);
         } catch (e) {}
       })();
     </script>
